@@ -1,6 +1,6 @@
-* Last name:
-* First name:
-* Github username:
+* Last name: Liu
+* First name: Ta-You (Eric)
+* Github username: tyl3452
 
 * Instructions:
 
