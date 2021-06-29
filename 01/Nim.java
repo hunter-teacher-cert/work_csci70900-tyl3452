@@ -81,6 +81,7 @@ public class Nim{
 				System.out.println("User is the winner!");
 				break;
 			}
+			
 
 		}//end while
 		
