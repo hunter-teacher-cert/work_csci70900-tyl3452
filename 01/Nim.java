@@ -4,6 +4,9 @@ import java.util.Scanner;
 
 public class Nim{
 	
+	public static int stones = 12;
+
+
 	/**
 	 * @desc check if current stones are 0
 	 * no error checking or neg number checking
@@ -15,11 +18,26 @@ public class Nim{
 		return (numberOfStones == 0);	
 	}//end isGameOver
 	
+	/**
+	 * @desc check if current stones are 0
+	 * no error checking or neg number checking
+	 * 
+	 * @param int numberOfStones
+	 * @return boolean game is over if stones is 0
+	 */
+	public static boolean validNumOfStones(int numToRemove) {
+		return (numToRemove != 0 && numToRemove < 4 && numToRemove <= stones);	
+	}//end isGameOver
+
+
 
 	public static void main(String[] args) {
 		System.out.println("Eric Liu - Nim");
 		
-		int stones = 12;
+		int stonesToRemove;
+		int randomStones;
+		
+		
 		
 		while(!isGameOver(stones)) {			
 			//State how many stones they currently are
@@ -27,9 +45,16 @@ public class Nim{
 			
 			//ask user amt of stones to remove
 			Scanner in = new Scanner(System.in);
-			System.out.print("Enter 1-3 stones to remove:");
-			int stonesToRemove = in.nextInt();
-			stones -= stonesToRemove;
+
+			//Keep asking to enter valid number of stones to remove
+			while(true) {
+				System.out.print("Enter 1-3 stones to remove:");
+				stonesToRemove = in.nextInt();
+				if (validNumOfStones(stonesToRemove)) {
+					stones -= stonesToRemove;
+					break;
+				}
+			}
 			
 			//print out current number of stones
 			System.out.printf("After user turn, There are %d stones.\n", stones);
@@ -39,14 +64,15 @@ public class Nim{
 				System.out.println("User is the winner!");
 				break;
 			}
-					
+
 			//aiTurn
 			//ai randomly selects number of stones to remove
 			Random rand = new Random();
-			int randomStones = rand.nextInt(3)+1;
-			System.out.printf("AI will remove %d stones.\n", randomStones);
+			randomStones = rand.nextInt(3)+1;
+			System.out.printf("AI try to remove %d stones to remove.\n", randomStones);
 			stones -= randomStones;
-					
+		
+				
 			//print out curent number of stones
 			System.out.printf("After AI Turn There are %d stones.\n", stones);
 			
