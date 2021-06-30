@@ -156,7 +156,7 @@ public class Mancala{
       }
       turn = !turn;           // change/invert turns
 
-    } while (checkWinner == -1);
+    } while (checkWinner() == -1);
 
     // while(true) {
     //   //setup gameBoard/display it
