@@ -91,9 +91,9 @@ public class Mancala{
 
 
 
-  /**
+	/**
 	* Displays the current gameBoard
-  * @return None
+    * @return None
 	*/
 	public static void displayBoard() {
 
