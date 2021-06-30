@@ -1,0 +1,34 @@
+Eric Liu pre03 Exercise 1
+
+1 - 
+
+No, I wug.
+You wugga wug.
+I wug.
+
+
+main starts with it's print "No, I " and calls zoop. 
+Zoop calls baffle which prints and then calls ping.
+Ping prints a dot and ends the sentence.
+Flowing back, zoop prints "You wugga " and calls baffle again which starts the same as before and ends with ping and a printed dot.
+
+
+
+2 - 
+main	No I 
+zoop	
+baffle	wug
+ping	.
+zoop	You wugga 
+baffle	wug
+ping	.
+main	I 
+baffle	wug
+ping	.
+
+
+3 - 
+You will get an infinite loop. baffle already invokes ping so invoking baffle inside ping will continuously create a deeper and deeper cycle.
+
+
+
