@@ -87,7 +87,7 @@ public class Mancala{
       stonesInPit--;
     }
     System.out.println(Arrays.toString(gameBoard));
-  }
+  }//end aiTurn
 
 
 
@@ -97,30 +97,29 @@ public class Mancala{
 	*/
 	public static void displayBoard() {
 
-    //Print gameboard out in full Array without formatting
-    //System.out.println(Arrays.toString(gameBoard));
+		//Print gameboard out in full Array without formatting
+		//System.out.println(Arrays.toString(gameBoard));
 
-    // Prints AI gameboard in two row format with mancala on the left side
-    System.out.print(gameBoard[13] + " ");
-    for (int i = 7; i < 13; i++) {
-       System.out.print(gameBoard[i]);
-    }
+		// Prints AI gameboard in two row format with mancala on the left side
+		System.out.print(gameBoard[13] + " ");
+		for (int i = 7; i < 13; i++) {
+		   System.out.print(gameBoard[i]);
+		}
 
-    // Prints user gameboard in two row format with mancala on the right side
-    System.out.print("\n  ");
-    for (int i = 0; i < 6; i++) {
-       System.out.print(gameBoard[i]);
-    }
-    System.out.println(" " + gameBoard[6] + " ");
-
+		// Prints user gameboard in two row format with mancala on the right side
+		System.out.print("\n  ");
+		for (int i = 0; i < 6; i++) {
+		   System.out.print(gameBoard[i]);
+		}
+		System.out.println(" " + gameBoard[6] + " ");
 
 	}//end displayBoard
 
 
-  /**
+	/**
 	* checkWinner
-  *
-  * @return int 0 user won, 1 AI won, 2 if tie, -1 if no winner
+	*
+	* @return int 0 user won, 1 AI won, 2 if tie, -1 if no winner
 	*/
 	public static int checkWinner() {
     //check if sum of the two mancalas are 48 meaning all stones dropped
@@ -145,39 +144,40 @@ public class Mancala{
 
   public static void main(String[] args){
 
+    boolean turn = false; //false for user, true for ai
 
-    while(true) {
+    do {
       //setup gameBoard/display it
-      displayBoard();
-      userTurn();
-
-      // Check if there is a winner
-      if ( checkWinner() != -1 ) {
-        break;
+      displayBoard();         // current status of board
+      if (turn == false) {    // choose who goes
+        userTurn();
+      } else {
+        aiTurn();
       }
+      turn = !turn;           // change/invert turns
 
-      //display board
-      displayBoard();
-      aiTurn();
+    } while (checkWinner == -1);
 
-      // Check if there is a winner
-      if ( checkWinner() != -1 ) {
-        break;
-      }
-
-    }//end while gameloop
-
-
-    //check if still user turn / loop back if it is
-
-    //redistribute stones
-    //display board
-    //check if still user turn/loop back if ai
-
-
-//for (i=pit+1; i<pit+stonesInPit+1; i++){
-  //gameBoard[i]++
-//}
+    // while(true) {
+    //   //setup gameBoard/display it
+    //   displayBoard();
+    //   userTurn();
+    //
+    //   // Check if there is a winner
+    //   if ( checkWinner() != -1 ) {
+    //     break;
+    //   }
+    //
+    //   //display board
+    //   displayBoard();
+    //   aiTurn();
+    //
+    //   // Check if there is a winner
+    //   if ( checkWinner() != -1 ) {
+    //     break;
+    //   }
+    //
+    // }//end while gameloop
 
   }
 
