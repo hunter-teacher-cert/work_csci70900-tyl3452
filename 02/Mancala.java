@@ -9,27 +9,18 @@
 import java.io.*;
 import java.util.*;
 import java.util.Scanner;
-//check if there are stones in any pit
-//player picks some pit on their side 0-5
-//empty chosen pit
-//distribute stones from pit
-//ai picks some pit 7-12
-//empty chosen pit
-//distribute stones from pit
-//keep going until you run out of stones in the pit
 
 /**
  *
  **/
 public class Mancala{
-  //0's at indices 6 and 13 to represent mancala
+  // 0's at indices 6 (user mancala) and 13(ai mancala) to represent mancala
+  // index starts at 0 on bottom left user pit and goes counter-clockwise and ends at 13 top left
   public static int[] gameBoard = {4, 4, 4, 4, 4, 4, 0, 4, 4, 4, 4, 4, 4, 0};
+  public static boolean userGo = true;
 
-  //is a user userTurn
   //asks user which pit to take from
   public static void userTurn(){
-    //display gameboard so player can see goes here
-    //System.out.println(Arrays.toString(gameBoard));
     Scanner myObj = new Scanner(System.in);  // Create a Scanner object
     System.out.print("User, Which pit to move from?: ");
     int pit = myObj.nextInt();  // Read user input
@@ -42,23 +33,9 @@ public class Mancala{
       pit = myObj.nextInt();  // Read user input
     }//end while
 
+    distributeStones(pit);
 
-    int stonesInPit = gameBoard[pit];//grab how many stones are in the pit user picked
-    //loop proceeds until stonesInPit == 0
-    //increments gameboard elements
-    gameBoard[pit] = 0; //empties the pit user picked
-    pit++;//incrememnts "pit index"
-    //while loop distributes the stones from the pit
-    while (stonesInPit>0) {
-      if (pit==13) { //makes sure not to drop in opponent's mancala
-        pit=0; //loops to my pit
-      }
-      gameBoard[pit] = gameBoard[pit]+1;
-      pit++;
-      stonesInPit--;
-    }
-    //System.out.println(Arrays.toString(gameBoard));
-  }
+  }//end userTurn
 
   //is a user aiTurn
   //asks user which pit to take from
@@ -67,35 +44,47 @@ public class Mancala{
     //System.out.println(Arrays.toString(gameBoard));
     Random random = new Random();
     int pit = random.nextInt(5)+7;
-    System.out.println("AI's turn is "+pit);
+    System.out.println("AI's turn is " + pit);
 
+    distributeStones(pit);
 
-
-    int stonesInPit = gameBoard[pit];//grab how many stones are in the pit user picked
-    //loop proceeds until stonesInPit == 0
-    //increments gameboard elements
-    gameBoard[pit]=0; //empties the pit user picked
-    pit++;//incrememnts "pit index"
-    //while loop distributes the stones from the pit
-    while (stonesInPit>0){
-      if (pit==6){ //makes sure not to drop in opponent's mancala
-        pit=7; //loops to ai pit start
-      }
-      gameBoard[pit]=gameBoard[pit]+1;
-      if (pit==13){ //checks if at end of array
-        pit=0; //loops back to first pit on opponents side
-      }else{ //if not at the end
-        pit++; //move on to next pit
-      }
-      stonesInPit--;
-    }
   }//end aiTurn
 
+  /**
+	* distributes the stones to other pits
+  * keeps track of whose turn and skips appropriate mancala
+  *
+  * @param pit number
+  * @return None
+	*/
+	public static void distributeStones(int pitNumber) {
+		//starting at pit, grab stones in pit and start redistributing to others
+    int stonesInPit = gameBoard[pitNumber]; //grab how many stones are in the pit user picked
+    //loop proceeds until stonesInPit == 0
+    //increments gameboard elements
+    gameBoard[pitNumber] = 0; //empties the pit user picked
+    pitNumber++;  //incrememnts "pit index"
+    //while loop distributes the stones from the pit
+    while (stonesInPit > 0) {
+      if (userGo == true) {     // User makes sure not to drop in (AI) mancala
+        if (pitNumber == 13) {
+          pitNumber = 0; //loops to beginning of pits
+        }
+      } else {                  // AI make sure not to drop in user mancala
+          if (pitNumber == 6) {
+            pitNumber = 7;
+          }
+      }
+      gameBoard[pitNumber]++;
+      pitNumber++;
+      stonesInPit--;
+    }//end while
 
+	}//end distributeStones
 
 	/**
 	* Displays the current gameBoard
-    * @return None
+  * @return None
 	*/
 	public static void displayBoard() {
 
@@ -124,7 +113,7 @@ public class Mancala{
 	* @return int 0 user won, 1 AI won, 2 if tie, -1 if no winner
 	*/
 	public static int checkWinner() {
-    //check if sum of the two mancalas are 48 meaning all stones dropped
+    //check if sum of the two mancalas are 48 meaning all stones dropped and a winner
     if ( (gameBoard[6] + gameBoard[13]) == 48) {
       if (gameBoard[6] > gameBoard[13]) {
         System.out.println("User player wins with " + gameBoard[6] + " stones.");
@@ -146,40 +135,17 @@ public class Mancala{
 
   public static void main(String[] args){
 
-    boolean turn = false; //false for user, true for ai
-
     do {  // game loop
       displayBoard();         // current status of board
-      if (turn == false) {    // choose who goes
+      if (userGo == true) {    // choose who goes
         userTurn();
       } else {
         aiTurn();
       }
-      turn = !turn;           // change/invert turns
+      userGo = !userGo;           // change/invert turns
 
     } while (checkWinner() == -1);
 
-    // while(true) {
-    //   //setup gameBoard/display it
-    //   displayBoard();
-    //   userTurn();
-    //
-    //   // Check if there is a winner
-    //   if ( checkWinner() != -1 ) {
-    //     break;
-    //   }
-    //
-    //   //display board
-    //   displayBoard();
-    //   aiTurn();
-    //
-    //   // Check if there is a winner
-    //   if ( checkWinner() != -1 ) {
-    //     break;
-    //   }
-    //
-    // }//end while gameloop
-
-  }
+  }//end main
 
 }//end Mancala
