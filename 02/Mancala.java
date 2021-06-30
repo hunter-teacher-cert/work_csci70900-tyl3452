@@ -1,6 +1,6 @@
 /**
  * Mancala
- * Team
+ * Team 5
  * Jiyoon Kim
  * Marina Moshchenko
  * Eric Liu
@@ -31,11 +31,14 @@ public class Mancala{
     //display gameboard so player can see goes here
     //System.out.println(Arrays.toString(gameBoard));
     Scanner myObj = new Scanner(System.in);  // Create a Scanner object
-    System.out.println("User, Which pit to move from?: ");
+    System.out.print("User, Which pit to move from?: ");
     int pit = myObj.nextInt();  // Read user input
 
-    while(gameBoard[pit] == 0) { // check valid move, loop if user input is invalid
-      System.out.println("User, Which pit to move from?: ");
+    // check valid move, loop if user input is invalid
+    while(pit > 5 ||
+          pit < 0 ||
+          gameBoard[pit] == 0) {
+      System.out.print("\nInvalid pit. User, Which pit to move from?: ");
       pit = myObj.nextInt();  // Read user input
     }//end while
 
@@ -61,7 +64,7 @@ public class Mancala{
   //asks user which pit to take from
   public static void aiTurn(){
     //display gameboard so player can see goes here
-    System.out.println(Arrays.toString(gameBoard));
+    //System.out.println(Arrays.toString(gameBoard));
     Random random = new Random();
     int pit = random.nextInt(5)+7;
     System.out.println("AI's turn is "+pit);
@@ -86,7 +89,6 @@ public class Mancala{
       }
       stonesInPit--;
     }
-    System.out.println(Arrays.toString(gameBoard));
   }//end aiTurn
 
 
@@ -102,7 +104,7 @@ public class Mancala{
 
 		// Prints AI gameboard in two row format with mancala on the left side
 		System.out.print(gameBoard[13] + " ");
-		for (int i = 7; i < 13; i++) {
+		for (int i = 12; i > 6; i--) {
 		   System.out.print(gameBoard[i]);
 		}
 
@@ -146,8 +148,7 @@ public class Mancala{
 
     boolean turn = false; //false for user, true for ai
 
-    do {
-      //setup gameBoard/display it
+    do {  // game loop
       displayBoard();         // current status of board
       if (turn == false) {    // choose who goes
         userTurn();
