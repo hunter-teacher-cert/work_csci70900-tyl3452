@@ -107,7 +107,7 @@ public class Mancala{
     }
 
     // Prints user gameboard in two row format with mancala on the right side
-    System.out.print("\n ");
+    System.out.print("\n  ");
     for (int i = 0; i < 6; i++) {
        System.out.print(gameBoard[i]);
     }
