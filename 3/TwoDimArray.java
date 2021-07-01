@@ -10,7 +10,7 @@
  * Eric Liu
  **/
 
-public class Main
+public class TwoDimArray
 {
 
     //print each row of 2D integer array a on its own line,
