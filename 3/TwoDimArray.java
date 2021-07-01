@@ -101,12 +101,13 @@ public class Main
         System.out.println("sum m1 : " + sum1(m1));
         System.out.println("sum m2 : " + sum1(m2));
         System.out.println("sum m3 : " + sum1(m3));
-                        /* ~~~v~~~~~slide~me~down~as~you~test~~~~~~~~~~~~~~~v~~~
 
         System.out.print("testing sum2...\n");
         System.out.println("sum m1 : " + sum2(m1));
         System.out.println("sum m2 : " + sum2(m2));
         System.out.println("sum m3 : " + sum2(m3));
+        /* ~~~v~~~~~slide~me~down~as~you~test~~~~~~~~~~~~~~~v~~~
+
         ~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~*/
     }//end main()
 
