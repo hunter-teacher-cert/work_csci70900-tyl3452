@@ -137,7 +137,7 @@ public class Mancala{
 
     do {  // game loop
       displayBoard();         // current status of board
-      if (userGo == true) {    // choose who goes
+      if (userGo == true) {    // check whose goes
         userTurn();
       } else {
         aiTurn();
