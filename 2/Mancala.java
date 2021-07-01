@@ -37,8 +37,6 @@ public class Mancala{
       distributeStones(pit);
     }
 
-
-
   }//end userTurn
 
   public static boolean noUserMove(){
@@ -97,7 +95,7 @@ public class Mancala{
       stonesInPit--;
 
       // Looping the array
-      if (pitNumber == 13) { // looping &ai's turn
+      if (pitNumber == 14) { // looping &ai's turn
         pitNumber = 0;
       }
 
