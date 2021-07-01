@@ -26,16 +26,28 @@ public class Mancala{
     int pit = myObj.nextInt();  // Read user input
 
     // check valid move, loop if user input is invalid
-    while(pit > 5 ||
-          pit < 0 ||
-          gameBoard[pit] == 0) {
-      System.out.print("\nInvalid pit. User, Which pit to move from?: ");
-      pit = myObj.nextInt();  // Read user input
-    }//end while
+    if (!noUserMove()) {
+      while(pit > 5 ||
+            pit < 0 ||
+            gameBoard[pit] == 0) {
+        System.out.print("\nInvalid pit. User, Which pit to move from?: ");
+        pit = myObj.nextInt();  // Read user input
+      }//end while
 
-    distributeStones(pit);
+      distributeStones(pit);
+    }
+
+
 
   }//end userTurn
+
+  public static boolean noUserMove(){
+    int currSum = 0;
+    for (int i = 0; i<6;i++){
+      currSum+=gameBoard[i];
+    }
+    return (currSum==0);
+  }
 
   //is a user aiTurn
   //asks user which pit to take from
@@ -43,7 +55,7 @@ public class Mancala{
     //display gameboard so player can see goes here
     //System.out.println(Arrays.toString(gameBoard));
     Random random = new Random();
-    int pit = random.nextInt(5)+7;
+    int pit = random.nextInt(6)+7;
     System.out.println("AI's turn is " + pit);
 
     distributeStones(pit);
@@ -63,21 +75,32 @@ public class Mancala{
     //loop proceeds until stonesInPit == 0
     //increments gameboard elements
     gameBoard[pitNumber] = 0; //empties the pit user picked
+    //System.out.print("Debug print:\n");
+    //displayBoard(); // debug print
     pitNumber++;  //incrememnts "pit index"
     //while loop distributes the stones from the pit
     while (stonesInPit > 0) {
-      if (userGo == true) {     // User makes sure not to drop in (AI) mancala
+
+      // skip mancala logic
+      if (userGo == true) { //user's turn
         if (pitNumber == 13) {
-          pitNumber = 0; //loops to beginning of pits
+          pitNumber = 0;
         }
-      } else {                  // AI make sure not to drop in user mancala
-          if (pitNumber == 6) {
+      } else if (userGo == false) {
+        if (pitNumber == 6) {      // ai's turn
             pitNumber = 7;
-          }
+        }
       }
+
       gameBoard[pitNumber]++;
       pitNumber++;
       stonesInPit--;
+
+      // Looping the array
+      if (pitNumber == 13) { // looping &ai's turn
+        pitNumber = 0;
+      }
+
     }//end while
 
 	}//end distributeStones
