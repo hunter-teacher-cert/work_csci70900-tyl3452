@@ -1,5 +1,6 @@
 import java.io.*;
 import java.util.*;
+import java.util.Scanner;
 /**
  * Team 5
  * Michele Persaud
@@ -24,6 +25,11 @@ public class Cgol
   //initialize empty board (all cells dead)
   public static char[][] createNewBoard(int rows, int cols) {
     char[][] gameBoard = new char[rows][cols];
+    for(int j = 0; j < rows; j++) {   // loop for outer rows
+      for(int k = 0; k < cols; k++) {    // loop for each row, to access each column
+        gameBoard[j][k] = '-';
+      }
+    }
     return (gameBoard);
   }//end createNewBoard
 
@@ -32,9 +38,9 @@ public class Cgol
   public static void printBoard(char[][] board) {
     for(int j = 0; j < board.length; j++) {   // loop for outer rows
       for(int k = 0; k < board[j].length; k++) {    // loop for each row, to access each column
-        System.out.print(board[j][k] + " ");
+        System.out.print(board[j][k]);
       }
-      System.out.print("\n");
+      System.out.println();
     }
   }
 
@@ -132,7 +138,7 @@ public class Cgol
     //[- X -]
     // next gen board
     //[- - -]
-    //[- - -]
+    //[X X X]
     //[- - -]
 
     // if cell has 2 or 3 neighbors, cell survives, set to X
@@ -141,11 +147,12 @@ public class Cgol
     } else if (numNeighbors == 3) {
       return 'X';
     } else if (numNeighbors < 2 || numNeighbors > 3) {  // cell dies starvation or overpopulation
-      return ' ';
+      return '-';
     } else {
-      return ' ';
+      return '-';
     }
 
+    // alternate version
     // if (board[r][c] == ' ') { // if dead
     //   if (numNeighbors == 3){ //check if exactly 3 neighbors to birth
     //     return 'X';         // birth
@@ -169,7 +176,7 @@ public class Cgol
   public static char[][] generateNextBoard(char[][] board) {
     char newBoard[][] = new char[board.length][board[0].length];
     for(int j = 0; j < newBoard.length; j++) {   // loop for outer rows
-      for(int k = 0; k < newBoard[j].length; k++) {    // loop for each row, to access each column
+      for(int k = 0; k < newBoard[0].length; k++) {    // loop for each row, to access each column
         newBoard[j][k] = getNextGenCell(board, j, k);
       }
     }
@@ -187,27 +194,50 @@ public class Cgol
     setCell(board, 1, 0, 'X');
 
     //blinker test
-    setCell(board, 10, 10, 'X');
-    setCell(board, 11, 10, 'X');
-    setCell(board, 12, 10, 'X');
+    setCell(board, 4, 7, 'X');
+    setCell(board, 5, 7, 'X');
+    setCell(board, 6, 7, 'X');
+
+    //tub
+    setCell(board, 20, 15, 'X');
+    setCell(board, 21, 14, 'X');
+    setCell(board, 21, 16, 'X');
+    setCell(board, 22, 15, 'X');
+
+    //glider test
+    setCell(board, 11, 3, 'X');
+    setCell(board, 12, 3, 'X');
+    setCell(board, 13, 3, 'X');
+    setCell(board, 13, 2, 'X');
+    setCell(board, 12, 1, 'X');
 
     // TASK:
     // Once your initial version is running,
     // try out different starting configurations of living cells...
     // (Feel free to comment out the above three lines.)
-    System.out.println("Gen X:");
-    printBoard(board);
-    System.out.println("--------------------------\n\n");
-    int temp = countNeighbours(board,1,1);
-    System.out.println("Number of neights at 1,1: " + temp);
-    board = generateNextBoard(board);
-    System.out.println("Gen X+1:");
-    printBoard(board);
-    System.out.println("--------------------------\n\n");
+    boolean nextRound = true;
+    int roundNumber = 0;
+    while(nextRound) {
+      //Print out the game board
+      System.out.println("Gen :" + roundNumber);
+      System.out.println("BEGIN--------------------------------------\n");
+      printBoard(board);
+      System.out.println("END--------------------------------------\n");
 
+      //Next round game loop
+      Scanner myObj = new Scanner(System.in);
+      System.out.println("Go to next round? (Type in 0 to stop or 1 to go): ");
+      int userInput = myObj.nextInt();
+      System.out.println(userInput);
+      if (userInput == 1) {
+        board = generateNextBoard(board);
+        roundNumber++;
+      } else {
+        System.out.println("Thx for playing");
+        nextRound = false;
+      }
+    }//end while
 
-
-    /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
   }//end main()
 
 }//end class
