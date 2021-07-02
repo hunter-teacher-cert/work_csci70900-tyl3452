@@ -226,7 +226,7 @@ public class Cgol
 
       //Next round game loop
       Scanner myObj = new Scanner(System.in);
-      System.out.print("Go to next round? (Type Y or N: ");
+      System.out.print("Go to next round? (Type Y or N): ");
       String userInput = myObj.nextLine();
       if (userInput.equals("y") || userInput.equals("Y") || userInput.equals("Yes") || userInput.equals("YES")) {
         board = generateNextBoard(board);
