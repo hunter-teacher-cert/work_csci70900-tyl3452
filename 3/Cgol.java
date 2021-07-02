@@ -60,43 +60,46 @@ public class Cgol
     if (c == 0) {
       checkLeftCol = false;
     }
-    if (r == board.length) {
+    if (r == board.length-1) {
       checkLastRow = false;
     }
-    if (c == board[0].length) {
+    if (c == board[0].length-1) {
       checkRightCol = false;
     }
+    // System.out.println("board width: " + board[0].length);
+    // System.out.println("checkRightCol: " + checkRightCol);
+    // System.out.println("c: " + c);
 
     //[- X -]
     //[- 0 -]
     //[X X X]
 
     //Top row
-    if (board[r-1][c-1] == 'X' && checkFirstRow && checkLeftCol) {
+    if (checkFirstRow && checkLeftCol && board[r-1][c-1] == 'X') {
       //countSurrounding = countSurrounding + 1;
       countSurrounding += 1;
     }
-    if (board[r-1][c] == 'X' && checkFirstRow) {
+    if (checkFirstRow && board[r-1][c] == 'X')  {
       countSurrounding += 1;
     }
-    if (board[r-1][c+1] == 'X' && checkFirstRow && checkRightCol) {
+    if (checkFirstRow && checkRightCol && board[r-1][c+1] == 'X') {
       countSurrounding += 1;
     }
     //Middle rows
-    if (board[r][c-1] == 'X' && checkLeftCol) {
+    if (checkLeftCol && board[r][c-1] == 'X') {
       countSurrounding += 1;
     }
-    if (board[r][c+1] == 'X' && checkRightCol) {
+    if (checkRightCol && board[r][c+1] == 'X') {
       countSurrounding += 1;
     }
     // Bottom row
-    if (board[r+1][c-1] == 'X' && checkLastRow && checkLeftCol) {
+    if (checkLastRow && checkLeftCol && board[r+1][c-1] == 'X') {
       countSurrounding += 1;
     }
-    if (board[r+1][c] == 'X' && checkLastRow) {
+    if (checkLastRow && board[r+1][c] == 'X' ) {
       countSurrounding += 1;
     }
-    if (board[r+1][c+1] == 'X' && checkLastRow && checkRightCol) {
+    if (checkLastRow && checkRightCol && board[r+1][c+1] == 'X') {
       countSurrounding += 1;
     }
     return countSurrounding;
@@ -123,29 +126,54 @@ public class Cgol
        * Each dead cell adjacent to exactly 3 living neighbours is a birth cell. It will come alive next generation.
        NOTA BENE:  All births and deaths occur simultaneously. Together, they constitute a single generation
     */
-
+    // current board
+    //[- X -]
+    //[- X -]
+    //[- X -]
+    // next gen board
+    //[- - -]
+    //[- - -]
+    //[- - -]
 
     // if cell has 2 or 3 neighbors, cell survives, set to X
-    if (numNeighbors == 2 || numNeighbors == 3) {
+    if (numNeighbors == 2) {
+      return board[r][c];
+    } else if (numNeighbors == 3) {
       return 'X';
     } else if (numNeighbors < 2 || numNeighbors > 3) {  // cell dies starvation or overpopulation
       return ' ';
+    } else {
+      return ' ';
     }
+
+    // if (board[r][c] == ' ') { // if dead
+    //   if (numNeighbors == 3){ //check if exactly 3 neighbors to birth
+    //     return 'X';         // birth
+    //   } else {
+    //     return ' ';         // dead cell stays dead
+    //   }
+    // } else if (board[r][c] == 'X') {  // if alive
+    //   if (numNeighbors < 2 || numNeighbors > 3) { // cell dies
+    //     return ' ';       // dies
+    //   } else {
+    //     return 'X';       // alive cell stays alive
+    //   }
+    // } else {
+    //   return ' ';         // catchall if not dead or alive, set to dead
+    // }
+
   }//end genNextGenCell
 
 
   //generate new board representing next generation
   public static char[][] generateNextBoard(char[][] board) {
-    char newBoard[][] new char[board.length][board[0].length];
-    for(int j = 0; j < board.length; j++) {   // loop for outer rows
-      for(int k = 0; k < board[j].length; k++) {    // loop for each row, to access each column
-        System.out.print(board[j][k] + " ");
+    char newBoard[][] = new char[board.length][board[0].length];
+    for(int j = 0; j < newBoard.length; j++) {   // loop for outer rows
+      for(int k = 0; k < newBoard[j].length; k++) {    // loop for each row, to access each column
+        newBoard[j][k] = getNextGenCell(board, j, k);
       }
-      System.out.print("\n");
     }
-
-
-    return (temp);
+    return (newBoard);
   }
 
 
@@ -157,6 +185,12 @@ public class Cgol
     setCell(board, 0, 0, 'X');
     setCell(board, 0, 1, 'X');
     setCell(board, 1, 0, 'X');
+
+    //blinker test
+    setCell(board, 10, 10, 'X');
+    setCell(board, 11, 10, 'X');
+    setCell(board, 12, 10, 'X');
+
     // TASK:
     // Once your initial version is running,
     // try out different starting configurations of living cells...
