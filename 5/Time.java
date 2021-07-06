@@ -71,6 +71,11 @@ public class Time {
   }//end setSecond
 
   // Print out time
+  public String toString() {
+    return String.format("Time is %d:%d:%f \n", this.hour, this.minute, this.second);
+  }//end toString
+
+  // Print out time
   public static void displayTime(Time t) {
     System.out.printf("Time is %d:%d:%f \n", t.hour, t.minute, t.second);
   }//end displayTime
@@ -78,6 +83,16 @@ public class Time {
   // check if same time
   public boolean equals(Time t) {
     return (this.hour == t.hour && this.minute == t.minute && this.second == t.second);
-  }//end displayTime
+  }//end equals
+
+  // add two times
+  public Time add(Time t) {
+    Time sumTime = new Time();
+    sumTime.setHour(this.hour + t.hour);
+    sumTime.setMinute(this.minute + t.minute);
+    sumTime.setSecond(this.minute + t.second);
+    return sumTime;
+  }//end add
+
 
 }//end class

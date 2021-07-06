@@ -38,6 +38,10 @@ public class Driver {
     System.out.print("Is t5 equal to t4?: ");
     System.out.println(t5.equals(t4));
 
+    System.out.print("Adding two times t4 + t5: ");
+    System.out.print(t4.toString() + " + ");
+    System.out.print(t5.toString() + " = ");
+    System.out.print(t4.add(t5).toString() + "\n");
 
 
 
