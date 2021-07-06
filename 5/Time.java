@@ -46,11 +46,39 @@ public class Time {
     this.second = second;
   }
 
+  public int getHour(){
+    return this.hour;
+  }//end getHour
+
+  public int getMinute(){
+    return this.minute;
+  }//end getMinute
+
+  public int getSecond(){
+    return this.second;
+  }//end getSecond
+
+  public void setHour(int hour){
+    this.hour = hour;
+  }//end setHour
+
+  public void setMinute(int minute){
+    this.minute = minute;
+  }//end setMinute
+
+  public void setSecond(int second){
+    this.second = second;
+  }//end setSecond
+
   // Print out time
   public static void displayTime(Time t) {
     System.out.printf("Time is %d : %d : %f \n", t.hour, t.minute, t.second);
 
   }//end displayTime
 
+  // check if same time
+  public boolean equals(Time t) {
+    return (this.hour == t.hour && this.minute == t.minute && this.second == t.second);
+  }//end displayTime
 
 }//end class
