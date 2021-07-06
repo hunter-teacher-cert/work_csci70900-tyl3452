@@ -88,9 +88,19 @@ public class Time {
   // add two times
   public Time add(Time t) {
     Time sumTime = new Time();
-    sumTime.setHour(this.hour + t.hour);
-    sumTime.setMinute(this.minute + t.minute);
-    sumTime.setSecond(this.minute + t.second);
+    sumTime.hour = this.hour + t.hour;
+    sumTime.minute = this.minute + t.minute;
+    sumTime.second = this.second + this.second;
+
+    //check for overflow
+    if (sumTime.second > 59) {
+      sumTime.second -= 60;
+      sumTime.minute += 1;
+    }
+    if (sumTime.minute > 59) {
+      sumTime.minute -= 60;
+      sumTime.hour += 1;
+    }
     return sumTime;
   }//end add
 
