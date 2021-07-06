@@ -49,6 +49,11 @@ public class Driver {
     Time t7 = t4.add(t6);
     System.out.print("t7 = t4+t6 = " + t7.toString());
 
+    //test 24 hour overflow
+    Time t8 = new Time(23,27,27.0);
+    System.out.print("t8: " + t8.toString());
+    Time t9 = t8.add(t7);
+    System.out.print("t9 = t8+t7: " + t9.toString());
 
 
   }//end main()

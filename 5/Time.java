@@ -90,7 +90,7 @@ public class Time {
     Time sumTime = new Time();
     sumTime.hour = this.hour + t.hour;
     sumTime.minute = this.minute + t.minute;
-    sumTime.second = this.second + this.second;
+    sumTime.second = this.second + t.second;
 
     //check for overflow
     if (sumTime.second > 59) {
