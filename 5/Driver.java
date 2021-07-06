@@ -17,20 +17,21 @@ public class Driver {
 
     //assign var the address of a newly-apportioned Time object
     t1 = new Time();
-    Time.displayTime(t1);
+    System.out.print("t1 = " + t1.toString());
 
     Time t2 = null;
     try {
-      Time.displayTime(t2);
+      System.out.print("t2 = " + t2.toString());
     } catch (Exception e) {
       System.out.println("Caught exception, skip");
     }
 
     Time t3 = t1;
     Time.displayTime(t3);
+    System.out.print("t3 using tostring = " + t3.toString());
 
     Time t4 = new Time(1,42,0.0);
-    Time.displayTime(t4);
+    System.out.print("t4 = " + t4.toString());
     System.out.print("Is t4 equals to t1?: ");
     System.out.println(t4.equals(t1));
 
@@ -43,6 +44,10 @@ public class Driver {
     System.out.print(t5.toString() + " = ");
     System.out.print(t4.add(t5).toString() + "\n");
 
+    Time t6 = new Time(14,56,54.0);
+    System.out.print(t6.toString());
+    Time t7 = t6.add(t6);
+    System.out.print("t4 + t6 = " + t7.toString());
 
 
 
