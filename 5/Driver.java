@@ -20,15 +20,23 @@ public class Driver {
     Time.displayTime(t1);
 
     Time t2 = null;
-    Time.displayTime(t2);
+    try {
+      Time.displayTime(t2);
+    } catch (Exception e) {
+      System.out.println("Caught exception, skip");
+    }
 
     Time t3 = t1;
     Time.displayTime(t3);
 
     Time t4 = new Time(1,42,0.0);
+    Time.displayTime(t4);
     System.out.print("Is t4 equals to t1?: ");
     System.out.println(t4.equals(t1));
 
+    Time t5 = new Time(1,42,0.0);
+    System.out.print("Is t5 equal to t4?: ");
+    System.out.println(t5.equals(t4));
 
 
 

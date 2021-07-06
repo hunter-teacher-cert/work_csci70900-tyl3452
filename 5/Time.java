@@ -11,12 +11,12 @@ import java.util.*;
 public class Time {
 
   // your implementation of class Time here
-  // private int hour;
-  // private int minute;
-  // private double second;
-  int hour;
-  int minute;
-  double second;
+  private int hour;
+  private int minute;
+  private double second;
+  // int hour;
+  // int minute;
+  // double second;
 
   //default constructor
   public Time() {
@@ -54,7 +54,7 @@ public class Time {
     return this.minute;
   }//end getMinute
 
-  public int getSecond(){
+  public double getSecond(){
     return this.second;
   }//end getSecond
 
@@ -66,14 +66,13 @@ public class Time {
     this.minute = minute;
   }//end setMinute
 
-  public void setSecond(int second){
+  public void setSecond(double second){
     this.second = second;
   }//end setSecond
 
   // Print out time
   public static void displayTime(Time t) {
-    System.out.printf("Time is %d : %d : %f \n", t.hour, t.minute, t.second);
-
+    System.out.printf("Time is %d:%d:%f \n", t.hour, t.minute, t.second);
   }//end displayTime
 
   // check if same time
