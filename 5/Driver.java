@@ -45,9 +45,9 @@ public class Driver {
     System.out.print(t4.add(t5).toString() + "\n");
 
     Time t6 = new Time(14,56,54.0);
-    System.out.print(t6.toString());
-    Time t7 = t6.add(t6);
-    System.out.print("t4 + t6 = " + t7.toString());
+    System.out.print("t6 : " + t6.toString());
+    Time t7 = t4.add(t6);
+    System.out.print("t7 = t4+t6 = " + t7.toString());
 
 
 
