@@ -142,14 +142,14 @@ public class Cgol
     //[- - -]
 
     // if cell has 2 or 3 neighbors, cell survives, set to X
-    if (numNeighbors == 2) {
+    if (numNeighbors == 2) {    // maybe could leave out and let else handle it
       return board[r][c];
     } else if (numNeighbors == 3) {
       return 'X';
     } else if (numNeighbors < 2 || numNeighbors > 3) {  // cell dies starvation or overpopulation
       return '-';
     } else {
-      return '-';
+      return board[r][c];
     }
 
     // alternate version
@@ -232,7 +232,7 @@ public class Cgol
         board = generateNextBoard(board);
         roundNumber++;
       } else {
-        System.out.println("Thx for playing");
+        System.out.println("Thx for playing Conway's Game of Life");
         nextRound = false;
       }
     }//end while

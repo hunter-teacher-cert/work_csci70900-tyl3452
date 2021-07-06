@@ -231,7 +231,7 @@ public class Cgol
       System.out.println("Gen :" + roundNumber);
       System.out.println("BEGIN--------------------------------------\n");
       printBoard(board);
-      System.out.println("END--------------------------------------\n");
+      System.out.println("END----------------------------------------\n");
 
       board = generateNextBoard(board);
       roundNumber++;
