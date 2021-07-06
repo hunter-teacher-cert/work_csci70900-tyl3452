@@ -101,6 +101,9 @@ public class Time {
       sumTime.minute -= 60;
       sumTime.hour += 1;
     }
+    if (sumTime.hour > 23) {
+      sumTime.hour -= 24;
+    }
     return sumTime;
   }//end add
 
