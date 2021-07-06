@@ -72,7 +72,7 @@ public class Time {
 
   // Print out time
   public String toString() {
-    return String.format("Time is %d:%d:%f \n", this.hour, this.minute, this.second);
+    return String.format("%d:%d:%f \n", this.hour, this.minute, this.second);
   }//end toString
 
   // Print out time
