@@ -1,5 +1,5 @@
 /**
-    Team
+    Team 7
     Chris O'Brien
     Mamudu Wally
     Eric Liu tayou.liu@gmail.com
