@@ -110,15 +110,29 @@ public class SuperArray
     }
 
 
+    // public String toString()
+    // {
+    //     String tempString = "";
+    //     for(int i=0; i < this.numberElements; i++) {
+    //         tempString += this.data[i] + " ";
+    //     }//end for
+    //     return tempString;
+    // }//end toString()
+
+    //alternate version that prints dash - for empty
     public String toString()
     {
         String tempString = "";
-        for(int i=0; i < this.numberElements; i++) {
-            tempString += this.data[i] + " ";
+        for(int i=0; i < this.data.length; i++) {
+            //check if past number of elements in array
+            if (i >= this.numberElements) {
+                tempString += "- ";
+            } else {
+                tempString += this.data[i] + " ";
+            }
         }//end for
         return tempString;
     }//end toString()
-
 
     //helper method for debugging/development phase
     public String debug()
