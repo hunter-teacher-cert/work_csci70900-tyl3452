@@ -1,7 +1,7 @@
 /**
     Team
     Chris O'Brien
-    Mamadu Wally
+    Mamudu Wally
     Eric Liu tayou.liu@gmail.com
  **/
 
@@ -67,10 +67,20 @@ public class SuperArray
         if (this.numberElements == this.data.length) {
             grow();
         }
-        // add item
-        this.data[numberElements] = value;
 
-        // increment numberElements
+        //alternate algo
+        //use existing shift values starting at index to the right
+        //and then set data[index] = value
+        //make new array with +1 for new item
+        //int[] tempArray = new int[this.data.length+1]
+        //move all elements at location >=index upone.
+        for(int i=this.numberElements; i > index; i--) {
+            this.data[i] = this.data[i-1];
+        }
+        //insert value at this.data[index]
+        this.data[index] = value;
+
+        //change number of elements;
         this.numberElements++;
 
     }//end add()
@@ -78,6 +88,13 @@ public class SuperArray
     //remove item
     public void remove( int index )
     {
+        //move elements to the right of index over on to the right
+        for(int i=index; i < this.numberElements; i++) {
+            this.data[i] = this.data[i+1];
+        }
+        //set last element to 0 to reset it
+        this.data[this.numberElements-1] = 0;
+        this.numberElements--;
 
     }//end remove()
 
