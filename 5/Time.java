@@ -17,7 +17,7 @@ public class Time {
   // int hour;
   // int minute;
   // double second;
-  // int milliseconds
+  // int milliseconds?
 
   //default constructor
   public Time() {
