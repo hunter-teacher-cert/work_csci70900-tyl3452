@@ -60,7 +60,7 @@ public class SuperArray
     }//end add()
 
     //overloaded to add with value and index
-    public void add( int value )
+    public void add( int index, int value )
     {
         // test to see if we need to grow, then grow
         // SIMPLE VERSION DOES NOT AUTO-GROW CAPACITY; INSERT MORE CODE HERE LATER
