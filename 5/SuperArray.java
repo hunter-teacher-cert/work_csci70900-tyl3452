@@ -90,11 +90,10 @@ public class SuperArray
     {
         //move elements to the right of index over on to the left
         for(int i=index; i < this.numberElements; i++) {
-            //check for last element in array to avoid out of bounds error
             if (i == this.data.length-1) {
-                this.data[i] = 0;
+                this.data[i] = 0;               //if last element, set to 0 to avoid out of bounds error
             } else {
-                this.data[i] = this.data[i+1];
+                this.data[i] = this.data[i+1];  // copy the next element into current element
             }
         }
         //decrement counter
