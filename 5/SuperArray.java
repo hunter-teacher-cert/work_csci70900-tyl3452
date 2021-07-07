@@ -88,7 +88,7 @@ public class SuperArray
     //remove item
     public void remove( int index )
     {
-        //move elements to the right of index over on to the right
+        //move elements to the right of index over on to the left
         for(int i=index; i < this.numberElements; i++) {
             this.data[i] = this.data[i+1];
         }
