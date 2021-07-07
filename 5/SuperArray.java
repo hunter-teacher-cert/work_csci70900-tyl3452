@@ -97,7 +97,7 @@ public class SuperArray
     {
         String tempString = "";
         for(int i=0; i < this.numberElements; i++) {
-            tempString = this.data[i] + " ";
+            tempString += this.data[i] + " ";
         }//end for
         return tempString;
     }//end toString()
