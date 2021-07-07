@@ -90,10 +90,14 @@ public class SuperArray
     {
         //move elements to the right of index over on to the left
         for(int i=index; i < this.numberElements; i++) {
-            this.data[i] = this.data[i+1];
+            //check for last element in array
+            if (i == this.data.length-1) {
+                this.data[i] = 0;
+            } else {
+                this.data[i] = this.data[i+1];
+            }
         }
         //set last element to 0 to reset it
-        this.data[this.numberElements-1] = 0;
         this.numberElements--;
 
     }//end remove()

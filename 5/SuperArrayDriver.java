@@ -36,6 +36,25 @@ public class SuperArrayDriver
     System.out.println(sa);
     sa.remove(15);
     System.out.println(sa);
+
+    //Add more 
+    System.out.println("\nadd to fill up array, then remove");
+    sa.add(77);
+    System.out.println(sa);
+    sa.add(77);
+    System.out.println(sa);
+    sa.add(77);
+    System.out.println(sa);
+    sa.add(77);
+    System.out.println(sa);
+    sa.add(77);
+    System.out.println(sa);
+    System.out.println("\nNow remove at index 3");
+    sa.remove(3);
+    System.out.println(sa);
+
+
+
     /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
