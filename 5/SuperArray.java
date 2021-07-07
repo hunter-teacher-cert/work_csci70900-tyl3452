@@ -1,7 +1,7 @@
 /**
-    Team 
-
-
+    Team
+    Chris O'Brien
+    Mamadu Wally
     Eric Liu tayou.liu@gmail.com
  **/
 
@@ -31,13 +31,15 @@ public class SuperArray
     //overloaded constructor -- allows specification of initial capacity
     public SuperArray( int size )
     {
-
+        this.data = new int[size];
+        this.numberElements = 0;
     }
 
     //default constructor -- initializes capacity to 10
     public SuperArray()
     {
-
+        this.data = new int[10];
+        this.numberElements = 0;
     }
 
 
@@ -46,31 +48,58 @@ public class SuperArray
     {
         // test to see if we need to grow, then grow
         // SIMPLE VERSION DOES NOT AUTO-GROW CAPACITY; INSERT MORE CODE HERE LATER
-
+        if (this.numberElements == this.data.length) {
+            grow();
+        }
         // add item
-
+        this.data[numberElements] = value;
 
         // increment numberElements
-
+        this.numberElements++;
 
     }//end add()
 
+    //overloaded to add with value and index
+    public void add( int value )
+    {
+        // test to see if we need to grow, then grow
+        // SIMPLE VERSION DOES NOT AUTO-GROW CAPACITY; INSERT MORE CODE HERE LATER
+        if (this.numberElements == this.data.length) {
+            grow();
+        }
+        // add item
+        this.data[numberElements] = value;
+
+        // increment numberElements
+        this.numberElements++;
+
+    }//end add()
+
+    //remove item
+    public void remove( int index )
+    {
+
+    }//end remove()
 
     public boolean isEmpty()
     {
-
+        return (this.numberElements==0);
     }
 
 
     public int get(int index)
     {
-
+        return (this.data[index]);
     }
 
 
     public String toString()
     {
-
+        String tempString = "";
+        for(int i=0; i < this.numberElements; i++) {
+            tempString = this.data[i] + " ";
+        }//end for
+        return tempString;
     }//end toString()
 
 
@@ -92,11 +121,17 @@ public class SuperArray
     {
         // create a new array with extra space
         // Q: How did you decide how much to increase capacity by?
-
+        // linearly by 10 each time for now
+        int[] newData = new int[this.data.length + 10];
         // copy over all the elements from the old array to the new one
+        for(int i=0; i < this.data.length; i++) {
+            newData[i] = this.data[i];
+        }//end for
 
         // point data to the new array
         // Q: How does this look when illustrated using encapsulation diagram?
+        // data points to new array with additional empty spaces
+        this.data = newData;
 
     }//end grow()
 
