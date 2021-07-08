@@ -123,7 +123,7 @@ public class SuperArray
             this.data[i] = this.data[i+1];
         }
         //for last element in array, set to 0
-        this.data[numberElements] = 0;
+        this.data[this.numberElements-1] = 0;
 
         //decrement counter
         this.numberElements--;
