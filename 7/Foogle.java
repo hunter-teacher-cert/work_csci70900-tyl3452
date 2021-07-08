@@ -20,7 +20,8 @@ import java.util.*;
 public class Foogle
 {
 
-  //  <YOUR DESCRIPTIVE COMMENT HERE>
+  // linear search for target
+  // @return index of target, -1 if not found
   public static int foo( ArrayList al, int target )
   {
     for( int pos=0; pos<al.size(); pos++) {
@@ -31,7 +32,9 @@ public class Foogle
   }//end foo()
 
 
-  //  <YOUR DESCRIPTIVE COMMENT HERE>
+  // Create arraylist with given number of items, fill with random integer numbers from
+  // lo to hi
+  // @return ArrayList object that was just created
   public static ArrayList gizmo(int numItems, int lo, int hi)
   {
     ArrayList retArr = new ArrayList();
@@ -52,11 +55,11 @@ public class Foogle
   {
     ArrayList retArr = new ArrayList();
 
-    // <YOUR DESCRIPTIVE COMMENT HERE>
+    // if requested array is for empty array, return new, empty array.
     if ( numItems<1 )
       return retArr;
 
-    // <YOUR DESCRIPTIVE COMMENT HERE>
+    // add random integer from 0 to lo (exlusive lo)
     retArr.add(
                (int)(lo * Math.random())
                );
