@@ -37,7 +37,7 @@ public class SuperArrayDriver
     sa.remove(15);
     System.out.println(sa);
 
-    //Add more 
+    //Add more to test array at full capacity
     System.out.println("\nadd to fill up array, then remove");
     sa.add(77);
     System.out.println(sa);
@@ -52,7 +52,9 @@ public class SuperArrayDriver
     System.out.println("\nNow remove at index 3");
     sa.remove(3);
     System.out.println(sa);
-
+    System.out.println("\nNow remove at index 0");
+    sa.remove(0);
+    System.out.println(sa);
 
 
     /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
