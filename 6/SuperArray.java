@@ -64,8 +64,17 @@ public class SuperArray
     {
         // test to see if we need to grow, then grow
         // SIMPLE VERSION DOES NOT AUTO-GROW CAPACITY; INSERT MORE CODE HERE LATER
+        // if (this.numberElements == this.data.length) {
+        //     // test if index to insert larger than current number of elements if want to allow it
+        //     if (index > this.numberElements) {          //grow to index
+        //         grow(index);
+        //     } else {                                    //grow by default
+        //         grow();                             
+        //     }
+        // }
+
         if (this.numberElements == this.data.length) {
-            grow();
+            grow();                             
         }
 
         //alternate algo
@@ -179,7 +188,7 @@ public class SuperArray
         return s;
     }//end debug()
 
-
+    //should have a grow with a number to grow
     private void grow()
     {
         // create a new array with extra space
@@ -197,5 +206,20 @@ public class SuperArray
         this.data = newData;
 
     }//end grow()
+
+    //should have a grow with a number to grow
+    //@param size int new size of array
+    private void grow(int size)
+    {
+        int[] newData = new int[size];
+        // copy over all the elements from the old array to the new one
+        for(int i=0; i < this.data.length; i++) {
+            newData[i] = this.data[i];
+        }//end for
+
+        //set data to new larger sized array
+        this.data = newData;
+
+}//end grow()
 
 }//end class
