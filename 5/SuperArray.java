@@ -85,6 +85,26 @@ public class SuperArray
 
     }//end add()
 
+    //this is add with two params can be called an insert
+    public void insert( int index, int value )
+    {
+        //if array is full, grow it
+        if (this.numberElements == this.data.length) {
+            grow();
+        }
+
+        //move the elements to the right by one
+        for(int i=this.numberElements; i > index; i--) {
+            this.data[i] = this.data[i-1];
+        }
+        //insert value at this.data[index]
+        this.data[index] = value;
+
+        //change number of elements;
+        this.numberElements++;
+
+    }//end insert()
+
     //remove item
     public void remove( int index )
     {
