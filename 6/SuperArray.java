@@ -108,14 +108,23 @@ public class SuperArray
     //remove item
     public void remove( int index )
     {
-        //move elements to the right of index over on to the left
-        for(int i=index; i < this.numberElements; i++) {
-            if (i == this.data.length-1) {
-                this.data[i] = 0;               //if last element, set to 0 to avoid out of bounds error
-            } else {
-                this.data[i] = this.data[i+1];  // copy the next element into current element
-            }
+        // //move elements to the right of index over on to the left
+        // for(int i=index; i < this.numberElements; i++) {
+        //     if (i == this.data.length-1) {
+        //         this.data[i] = 0;               //if last element, set to 0 to avoid out of bounds error
+        //     } else {
+        //         this.data[i] = this.data[i+1];  // copy the next element into current element
+        //     }
+        // }
+
+        //alternate way to account for out of bounds
+        //got to numberElements-1 and then do the last one manually.
+        for(int i=index; i < this.numberElements-1; i++) {
+            this.data[i] = this.data[i+1];
         }
+        //for last element in array, set to 0
+        this.data[numberElements] = 0;
+
         //decrement counter
         this.numberElements--;
 
