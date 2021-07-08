@@ -83,7 +83,6 @@ public class Foogle
   public static void main( String[] args )
   {
     // test battery for gizmo()
-    /*~~~~v~~~~~~move~me~down~~~1~block~at~a~time~~~~~~~~~~v~~~~
     System.out.println("\n"+"al000"+":");
     ArrayList al000 = gizmo(0,0,0);
     System.out.println(al000);
@@ -100,6 +99,8 @@ public class Foogle
     ArrayList al05 = gizmo(20,1,5);
     System.out.println(al05);
     System.out.println(foo(al05,3));
+        /*~~~~v~~~~~~move~me~down~~~1~block~at~a~time~~~~~~~~~~v~~~~
+
       ~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~*/
 
 
