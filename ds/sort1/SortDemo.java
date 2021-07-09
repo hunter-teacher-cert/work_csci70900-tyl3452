@@ -40,7 +40,6 @@ public class SortDemo{
         for (int i=0;i<15;i++){
             data.add(r.nextInt(20));
         }
-	
     }
     
     //constructor with target size, initialize ArrayList of Integers random from 0 to 20.
@@ -118,9 +117,13 @@ public class SortDemo{
         }//end for
         
         return -1; // replace this return
-    }
+    }//end linearSearch()
     
     /* If you finish the lab early you can get started on this */
+    /**
+     * @param value int of target in search
+     * @return -1 if not found, int of index of first target found
+     */
     public int binarySearch(int value){
         boolean replacethiswithrealexpression=false;
         int lowerIndex = 0;
@@ -133,22 +136,33 @@ public class SortDemo{
             you have to replace the "replacethiswithrealexpression" boolean 
             with a correct expression based on lowerIndex and upperIndex
         */
-        while (replacethiswithrealexpression)
-            {
+        while (lowerIndex < upperIndex)
+        {
             // update lower and upper.
             // remember if value is less than data.get(middleIndex) you want to search next time
             // from lower to the middle and otherwise from the middle to the upper.
             //
             // then update middleIndex based on new lowerIndex and upperIndex.
-            
+            if (value == data.get(middleIndex)) {
+                return middleIndex;
+            } else if (value > data.get(middleIndex)) {
+                lowerIndex = middleIndex + 1;
+            } else if (value < data.get(middleIndex)) {
+                upperIndex = middleIndex - 1;
+            } else {
+
             }
+
+
+            
+        }//end while
         
         /* replace this return to either return the value if it was found and -1
         if upperIndex and lowerIndex crossed
         */    
         
-        return 0; // replace this return
-    }
+        return -1; // if not found
+    }//end binarySearch()
     
 	
     public String toString() {
