@@ -46,6 +46,10 @@ public class SortDemoDriver {
         System.out.println("sd linearSearch for  3: " + sd.linearSearch(3));
         System.out.println("sd2 linearSearch for 20: " + sd2.linearSearch(20));
 
+        System.out.println("sd binarySearch for 15: " + sd.binarySearch(15));
+        System.out.println("sd binarySearch for  3: " + sd.binarySearch(3));
+        System.out.println("sd2 binarySearch for 20: " + sd2.binarySearch(20));
+
 
     }//end main
 

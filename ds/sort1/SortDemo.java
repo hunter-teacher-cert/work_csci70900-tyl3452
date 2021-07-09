@@ -125,9 +125,9 @@ public class SortDemo{
      * @return -1 if not found, int of index of first target found
      */
     public int binarySearch(int value){
-        boolean replacethiswithrealexpression=false;
+        boolean isFound=false;
         int lowerIndex = 0;
-        int upperIndex = data.size();
+        int upperIndex = data.size()-1;
         int middleIndex = data.size()/2;
         
         /* if upper crosses lower it's not there and the lop should exit the loop
@@ -136,32 +136,32 @@ public class SortDemo{
             you have to replace the "replacethiswithrealexpression" boolean 
             with a correct expression based on lowerIndex and upperIndex
         */
-        while (lowerIndex < upperIndex)
+        while (lowerIndex <= upperIndex)
         {
             // update lower and upper.
             // remember if value is less than data.get(middleIndex) you want to search next time
             // from lower to the middle and otherwise from the middle to the upper.
             //
             // then update middleIndex based on new lowerIndex and upperIndex.
+            System.out.println("Lower: " + lowerIndex + ", Middle: " + middleIndex + ", Upper: " + upperIndex);
             if (value == data.get(middleIndex)) {
                 return middleIndex;
             } else if (value > data.get(middleIndex)) {
                 lowerIndex = middleIndex + 1;
             } else if (value < data.get(middleIndex)) {
                 upperIndex = middleIndex - 1;
-            } else {
+            } 
 
-            }
-
-
+            //update middle index
+            middleIndex = (lowerIndex + upperIndex) / 2;
             
         }//end while
         
         /* replace this return to either return the value if it was found and -1
         if upperIndex and lowerIndex crossed
         */    
-        
-        return -1; // if not found
+        return -1;
+
     }//end binarySearch()
     
 	
