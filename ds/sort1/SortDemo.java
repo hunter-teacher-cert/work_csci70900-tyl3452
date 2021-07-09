@@ -137,8 +137,12 @@ public class SortDemo{
     }
     
 	
-    public String toString(){
+    public String toString() {
 	    return ""+data;
-    };
+    }
+
+    public int get(int index) {
+        return data.get(index);
+    }
 
 }
