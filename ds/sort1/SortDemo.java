@@ -80,19 +80,24 @@ public class SortDemo{
     }
 
 
-    
+    //looks to be selection sort
     public void sort(){
-	int i;
-	for (i=0;i < data.size()-1; i++){
-	    // find the smallet index from i to end
-	    // your code here
-
-	    // swap the item at that index and i
-	    // your code here
-	    
-	    
-	}
-    }
+        int i;
+        int smallIndex;
+        int tempInt;
+        for (i=0;i < data.size()-1; i++){
+            // find the smallet index from i to end
+            // your code here
+            smallIndex = findSmallestIndex(i);
+  
+            // swap the item at that index and i
+            // your code here
+            tempInt = data.get(smallIndex);
+            data.set(smallIndex, data.get(i));
+            data.set(i, tempInt);
+            
+        }
+      }
 
 
 
