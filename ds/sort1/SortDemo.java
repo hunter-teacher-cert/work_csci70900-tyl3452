@@ -35,21 +35,21 @@ public class SortDemo{
 
     //default constructor that creates Integer ArrayList of 15 random integers from 0 to 20
     public SortDemo(){
-	data = new ArrayList<Integer>();
-	r = new Random();
-	for (int i=0;i<15;i++){
-	    data.add(r.nextInt(20));
-	}
+        data = new ArrayList<Integer>();
+        r = new Random();
+        for (int i=0;i<15;i++){
+            data.add(r.nextInt(20));
+        }
 	
     }
     
     //constructor with target size, initialize ArrayList of Integers random from 0 to 20.
     public SortDemo(int size){
-	data = new ArrayList<Integer>();
-	r = new Random();
-	for (int i=0;i<size;i++){
-	    data.add(r.nextInt(20));
-	}
+        data = new ArrayList<Integer>();
+        r = new Random();
+        for (int i=0;i<size;i++){
+            data.add(r.nextInt(20));
+        }
 	
     }
 
