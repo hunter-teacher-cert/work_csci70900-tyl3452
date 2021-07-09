@@ -32,7 +32,7 @@ public class SortDemo{
     private ArrayList<Integer> data;  // to store the data
     private Random r; 
 
-    
+    //default constructor that creates Integer ArrayList of 15 random integers from 0 to 20
     public SortDemo(){
 	data = new ArrayList<Integer>();
 	r = new Random();
@@ -42,6 +42,7 @@ public class SortDemo{
 	
     }
     
+    //constructor with target size, initialize ArrayList of Integers random from 0 to 20.
     public SortDemo(int size){
 	data = new ArrayList<Integer>();
 	r = new Random();

@@ -1,6 +1,7 @@
 /**
  * Team 
- * 
+ * Dwayne Levene
+ * Eduardo Leite
  * Eric Liu
  */
 
