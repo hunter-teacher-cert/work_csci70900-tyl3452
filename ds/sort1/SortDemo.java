@@ -1,6 +1,7 @@
 /**
- * Team 
- * 
+ * Team 4
+ * Dwayne Levene
+ * Eduardo Leite
  * Eric Liu
  */
 
@@ -58,17 +59,23 @@ public class SortDemo{
       5,3,10,6,8
       if start was 2 (start at index 2, value 10) then it woudl return 3 which is the index of the value
       6 which is the index with the smallest value from start to end
+
+      @param int start given an index to start looking for smallest element in array
     */
     public int findSmallestIndex(int start){
-	int smallIndex = start;
-	
-	// start a variable at the one after start
-	// your code here
-	
-	// loop from that variable to end and update smallIndex as needed
-	// your code here
-	
-	return smallIndex;
+	    // start a variable at the one after start
+        // your code here
+        int smallIndex = start;
+        
+        // loop from that variable to end and update smallIndex as needed
+        // your code here
+        for(int i=start+1; i<data.size(); i++){
+          if(data.get(i) < data.get(smallIndex)) {
+            smallIndex = i;
+          }
+        }//end for
+        
+        return smallIndex;
 
     }
 
@@ -91,47 +98,47 @@ public class SortDemo{
 
     /* If you finish the lab early you can get started on this */
     public int linearSearch(int value){
-	// loop through the ArrayList data
-	// and if the value you're searchign for is in the ArrayList, return it.
-	// return -1 if it isn't there.
-	
-	
-	return 0; // replace this return
+        // loop through the ArrayList data
+        // and if the value you're searchign for is in the ArrayList, return it.
+        // return -1 if it isn't there.
+        
+        
+        return 0; // replace this return
     }
     
     /* If you finish the lab early you can get started on this */
     public int binarySearch(int value){
-	boolean replacethiswithrealexpression=false;
-	int lowerIndex = 0;
-	int upperIndex = data.size();
-	int middleIndex = data.size()/2;
-	
-	/* if upper crosses lower it's not there and the lop should exit the loop
-	   and if the item is at middle you should exit the loop
-    
-           you have to replace the "replacethiswithrealexpression" boolean 
-           with a correct expression based on lowerIndex and upperIndex
-	*/
-	while (replacethiswithrealexpression)
-	    {
-		// update lower and upper.
-		// remember if value is less than data.get(middleIndex) you want to search next time
-		// from lower to the middle and otherwise from the middle to the upper.
-		//
-		// then update middleIndex based on new lowerIndex and upperIndex.
-	    
-	    }
-	
-	/* replace this return to either return the value if it was found and -1
-	   if upperIndex and lowerIndex crossed
-	*/    
-	
-	return 0; // replace this return
+        boolean replacethiswithrealexpression=false;
+        int lowerIndex = 0;
+        int upperIndex = data.size();
+        int middleIndex = data.size()/2;
+        
+        /* if upper crosses lower it's not there and the lop should exit the loop
+        and if the item is at middle you should exit the loop
+        
+            you have to replace the "replacethiswithrealexpression" boolean 
+            with a correct expression based on lowerIndex and upperIndex
+        */
+        while (replacethiswithrealexpression)
+            {
+            // update lower and upper.
+            // remember if value is less than data.get(middleIndex) you want to search next time
+            // from lower to the middle and otherwise from the middle to the upper.
+            //
+            // then update middleIndex based on new lowerIndex and upperIndex.
+            
+            }
+        
+        /* replace this return to either return the value if it was found and -1
+        if upperIndex and lowerIndex crossed
+        */    
+        
+        return 0; // replace this return
     }
     
 	
     public String toString(){
-	return ""+data;
+	    return ""+data;
     };
 
 }
