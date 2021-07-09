@@ -42,6 +42,11 @@ public class SortDemoDriver {
         System.out.println("sd2 After sorted: " + sd2);
         /*
         */
+        System.out.println("sd linearSearch for 15: " + sd.linearSearch(15));
+        System.out.println("sd linearSearch for  3: " + sd.linearSearch(3));
+        System.out.println("sd2 linearSearch for 20: " + sd2.linearSearch(20));
+
+
     }//end main
 
 }

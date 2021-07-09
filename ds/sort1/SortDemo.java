@@ -102,13 +102,22 @@ public class SortDemo{
 
 
     /* If you finish the lab early you can get started on this */
+    /**
+     * 
+     * @param value int index first found element equal to value
+     * @return -1 if not found, index of target
+     */
     public int linearSearch(int value){
         // loop through the ArrayList data
         // and if the value you're searchign for is in the ArrayList, return it.
         // return -1 if it isn't there.
+        for(int i=0; i<data.size(); i++) {
+          if (data.get(i) == value) {
+            return i;
+          }
+        }//end for
         
-        
-        return 0; // replace this return
+        return -1; // replace this return
     }
     
     /* If you finish the lab early you can get started on this */
