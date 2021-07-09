@@ -42,12 +42,18 @@ public class SortDemoDriver {
         System.out.println("sd2 After sorted: " + sd2);
         /*
         */
+        System.out.println("\nsd: " + sd);
+        System.out.println("sd2: " + sd2);
         System.out.println("sd linearSearch for 15: " + sd.linearSearch(15));
         System.out.println("sd linearSearch for  3: " + sd.linearSearch(3));
         System.out.println("sd2 linearSearch for 20: " + sd2.linearSearch(20));
 
+        System.out.println("\nsd: " + sd);
+        System.out.println("sd2: " + sd2);
+        System.out.println("sd binarySearch for 0: " + sd.binarySearch(0));
         System.out.println("sd binarySearch for 15: " + sd.binarySearch(15));
         System.out.println("sd binarySearch for  3: " + sd.binarySearch(3));
+        System.out.println("sd2 binarySearch for 19: " + sd2.binarySearch(19));
         System.out.println("sd2 binarySearch for 20: " + sd2.binarySearch(20));
 
 
