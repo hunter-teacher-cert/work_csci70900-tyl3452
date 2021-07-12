@@ -3,7 +3,7 @@
 #### Standard: 9-12.CT.8
 
 
-### Aim: How do we use the for loop to draw a regular polygon?
+### Aim: How do we use the for loop to draw a regular polygon / create some art!?
 
 ---
 
@@ -11,15 +11,22 @@
 time: 3-5 mins
 
 Write down a sequence of steps that can be repeated to draw a pinwheel. (Image of pinwheel shown). 
-Physically mimic the steps you would take starting at putting a pen down to draw.
+Physically mimic the steps you would take starting at putting a pen down to draw. Once you put your pen down, you start drawing. Be careful not to skip steps such as lifting your pen, which would cause you to stop drawing.
+
+#### - CFUs/Misconceptions
+Teacher Q: How long is each side? How did you draw this side without lifting your pen? What is your starting point? What is your ending point? Did you start and end at the same point? Which set of instructions repeat?
+
 
 ---
 
 ### Lesson Activity Part 1 (repetition w/o loop control structure)
 time: 10 mins
 
-Write down all the steps to draw 3, squares/houses/or pinwheels next to each other (without overlapping). 
+Write down all the steps to draw 3, squares/houses/or 5 sided pinwheels next to each other (without overlapping). Write out all repeating steps (do not use loops at this point of time).
 Choose a specific distance such as 1 inch to the right of the current pen position when moving to next pinwheel and you can default the side length to any appropraite number.
+
+#### - CFUs/Misconceptions
+Teacher Q: What part is repetitive? Is there a repetition within a repetition? Are there/Did you use any written shorthands you used so you do not have to rewrite the same thing?
 
 ---
 
@@ -32,6 +39,7 @@ Teacher - Take an algorithm (to draw a house or any other) and model how you wou
 
 Teacher - Take another algo and ask for class chare out how to break up code as a for loop.
 
+
 ---
 
 ### Lesson Activity Part 2
@@ -39,14 +47,18 @@ time: 15 mins
 
 Students - Take a look at their pinwheel code and they will break up and write a for loop.
 
+
+#### - CFUs/Misconceptions
+Teacher Q: Where do you indicate to stop your loop? And why did you choose that location/number?
+
 ---
 
 ### Closing
 time: 3-5 mins
 
-Option 1 - MC - Which algorithm below using the for loop control structure will correctly output a 5 sided pinwheel?
+Option 1 - MCQ (with code snippet images) - Which algorithm below using the for loop control structure will correctly output a 5 sided pinwheel?
 
-Option 2(Challenge) - If complete with the question above, Write/Edit the for loop again to be able to draw an octagon/decagon.
+Option 2(Challenge) - If complete with the question above, Write/Edit a for loop again to be able to draw an octagon/decagon.
 
 
 ---
