@@ -2,6 +2,8 @@
 
 #### Standard: 9-12.CT.8
 
+#### Prior Knowledge: Geometric angles and regular polygons (square,pentagon,octagon, etc), Logic conditional statements <>=.
+
 
 ### Aim: How do we use the for loop to draw a regular polygon / create some art!?
 
@@ -12,6 +14,8 @@ time: 3-5 mins
 
 Write down a sequence of steps that can be repeated to draw a pinwheel. (Image of pinwheel shown). 
 Physically mimic the steps you would take starting at putting a pen down to draw. Once you put your pen down, you start drawing. Be careful not to skip steps such as lifting your pen, which would cause you to stop drawing.
+
+- Teacher circulating between small groups.
 
 #### - CFUs/Misconceptions
 Teacher Q: How long is each side? How did you draw this side without lifting your pen? What is your starting point? What is your ending point? Did you start and end at the same point? Which set of instructions repeat?
@@ -28,17 +32,20 @@ Choose a specific distance such as 1 inch to the right of the current pen positi
 #### - CFUs/Misconceptions
 Teacher Q: What part is repetitive? Is there a repetition within a repetition? Are there/Did you use any written shorthands you used so you do not have to rewrite the same thing?
 
+- Teacher presents additional challenge and circulates between small groups again.
+
 ---
 
 ### Lesson Content
 time: 10-15 mins
 
-Teacher - Define and model / live code how to write a for loop. Implement and display outputs.
+Teacher - Define and model / live code how to write a for loop to count up from 0 to 9. Implement and display outputs. Modify starting and end points and display changed outputs that occur.
 
-Teacher - Take an algorithm (to draw a house or any other) and model how you would break it up and implement as a for loop.
+Teacher - Take an algorithm (to draw a house or any other shape) and model how you would break it up and implement as a for loop.
 
-Teacher - Take another algo and ask for class chare out how to break up code as a for loop.
+Teacher - Take another algo(how to draw a square) and ask for class chare out how to break up code as a for loop.
 
+Teacher Q: If I changed this value (starting/ending), what is the output to the screen? If I changed the condition with < or <=, what is output to the screen?
 
 ---
 
