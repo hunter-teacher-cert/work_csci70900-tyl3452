@@ -32,7 +32,7 @@ Choose a specific distance such as 1 inch to the right of the current pen positi
 #### - CFUs/Misconceptions
 Teacher Q: What part is repetitive? Is there a repetition within a repetition? Are there/Did you use any written shorthands you used so you do not have to rewrite the same thing?
 
-- Teacher presents additional challenge and circulates between small groups again.
+- Teacher presents additional activity challenge and circulates between small groups again to CFU.
 
 ---
 
@@ -52,11 +52,11 @@ Teacher Q: If I changed this value (starting/ending), what is the output to the 
 ### Lesson Activity Part 2
 time: 15 mins
 
-Students - Take a look at their pinwheel code and they will break up and write a for loop.
+Students - Take a look at their pinwheel code, adjust if necessary and they will break up and implement a for loop.
 
 
 #### - CFUs/Misconceptions
-Teacher Q: Where do you indicate to stop your loop? And why did you choose that location/number?
+Teacher Q: Where do you indicate to stop your loop? And why did you choose that location/number? 
 
 ---
 
