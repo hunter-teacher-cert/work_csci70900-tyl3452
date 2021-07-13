@@ -113,7 +113,7 @@ public class Knights{
 		// 1. The maze had only four calls.
 		// 2. The parameters for the call are a little different.
 		// Add the recursive calls here
-		solved = solve(col-1,row-2,count++)	// space A
+		solved = solve(col-1,row-2,count++);	// space A
 		if (!solved) {	// space B
 			solved = solve(col+1,row-2,count++);
 		}
