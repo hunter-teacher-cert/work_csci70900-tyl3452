@@ -27,7 +27,6 @@ public class Knights{
 			{Thread.sleep(n);} 
 				catch(InterruptedException e)
 			{}
-
     }//end delay()
 
     
