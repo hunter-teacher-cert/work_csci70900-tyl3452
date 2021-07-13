@@ -34,7 +34,8 @@ public class Knights{
 		rows = size;
 		cols = size;
 		this.size=size;
-		int row,col;
+		int row, col;
+
 
 		// Notice that the board is 4 bigger in both directions with 0's
 		// in the middle and a 2 row/col border of -1.
