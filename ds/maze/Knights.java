@@ -145,6 +145,7 @@ public class Knights{
 		// Here we unset where we were for the backtracking
 		board[col][row]=0;
 		return solved;
+
 	}//end solve()
 
     
