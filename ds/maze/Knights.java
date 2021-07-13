@@ -18,7 +18,8 @@ public class Knights{
     private int rows = 5;
     private int cols = 5;
     private int size=5;
-    private String clearScreen="[0;0H\n";
+	private String clearScreen="\033[2J\033[1;1H";
+    //private String clearScreen="[0;0H\n";
 
     private void delay(int n)
     {
@@ -77,7 +78,7 @@ public class Knights{
     public boolean solve(int col,int row, int count){
 		boolean solved = false;
 
-		System.out.println("In solve function: " + count);
+		//System.out.println("In solve function: " + count);
 
 		// This should return true when we've solved the problem
 		// What should CHANGETHIS be?
@@ -85,7 +86,7 @@ public class Knights{
 		// here, when do we know when we're done?
 		// HINT: you have an nxn board and are done when you've visited
 		// every board location
-		if (count>col*row){
+		if (count>this.cols*this.rows) {
 			System.out.println(this);
 			return true;
 		}
@@ -114,31 +115,33 @@ public class Knights{
 		// 1. The maze had only four calls.
 		// 2. The parameters for the call are a little different.
 		// Add the recursive calls here
-		solved = solve(col-1,row-2,count++);	// space A
+		//System.out.println("before space A c:" + (col-1) + " r" + (row-2));
+		solved = solve(col-1,row-2,count+1);	// space A
 		if (!solved) {	// space B
-			solved = solve(col+1,row-2,count++);
+			//System.out.println("before space B c:" + (col+1) + " r" + (row-2));
+			solved = solve(col+1,row-2,count+1);
 		}
 		if (!solved) {	// space C
-			solved = solve(col+2,row-1,count++);
+			//System.out.println("before space C c:" + (col+2) + " r" + (row-1));
+			solved = solve(col+2,row-1,count+1);
 		}
 		if (!solved) {	// space D
-			solved = solve(col+2,row+1,count++);
+			solved = solve(col+2,row+1,count+1);
 		}
 		if (!solved) {	// space E
-			solved = solve(col+1,row+2,count++);
+			solved = solve(col+1,row+2,count+1);
 		}
 		if (!solved) {	// space F
-			solved = solve(col-1,row+2,count++);
+			solved = solve(col-1,row+2,count+1);
 		}
 		if (!solved) {	// space G
-			solved = solve(col-2,row+1,count++);
+			solved = solve(col-2,row+1,count+1);
 		}
 		if (!solved) {	// space H
-			solved = solve(col-2,row-1,count++);
+			solved = solve(col-2,row-1,count+1);
 		}
 
 		// Here we unset where we were for the backtracking
-		
 		board[col][row]=0;
 		return solved;
 	}//end solve()

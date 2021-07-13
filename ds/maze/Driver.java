@@ -1,7 +1,7 @@
 /**
  * Team 
- * 
- * 
+ * Michell Best
+ * Michelle Persaud
  * Eric Liu
  */
 
@@ -20,7 +20,10 @@ public class Driver{
 		
 		
 		Knights k = new Knights(5);
-		solved = k.solve(1,1,1);
+		//System.out.println(k);
+		solved = k.solve(2,2,1);
+		
+
 		
     }//end main()
 }
