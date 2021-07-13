@@ -19,6 +19,7 @@ public class Driver{
 		// solved = m.solve(3,3);
 		
 		//Start randomly on the user accessible board
+		//test random start
 		int boardSize = 5;
 		Random rand = new Random();
 
