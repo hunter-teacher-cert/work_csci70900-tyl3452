@@ -101,7 +101,7 @@ public class Knights{
 	
 		// what do we put into the board
 		// Change CHANGETHIS
-		board[col][row]=CHANGETHIS;
+		board[col][row]=count;
 
 		delay(50);
 		System.out.println(clearScreen+this);
@@ -113,9 +113,28 @@ public class Knights{
 		// 1. The maze had only four calls.
 		// 2. The parameters for the call are a little different.
 		// Add the recursive calls here
-		
-
-		
+		solved = solve(col-1,row-2,count++)	// space A
+		if (!solved) {	// space B
+			solved = solve(col+1,row-2,count++);
+		}
+		if (!solved) {	// space C
+			solved = solve(col+2,row-1,count++);
+		}
+		if (!solved) {	// space D
+			solved = solve(col+2,row+1,count++);
+		}
+		if (!solved) {	// space E
+			solved = solve(col+1,row+2,count++);
+		}
+		if (!solved) {	// space F
+			solved = solve(col-1,row+2,count++);
+		}
+		if (!solved) {	// space G
+			solved = solve(col-2,row+1,count++);
+		}
+		if (!solved) {	// space H
+			solved = solve(col-2,row-1,count++);
+		}
 
 		// Here we unset where we were for the backtracking
 		
