@@ -148,6 +148,4 @@ public class Knights{
 	}//end solve()
 
     
-
-    
 }//end class Knights
