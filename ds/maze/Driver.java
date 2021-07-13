@@ -18,10 +18,12 @@ public class Driver{
 		// System.out.println(m);
 		// solved = m.solve(3,3);
 		
-		
-		Knights k = new Knights(5);
-		//System.out.println(k);
-		solved = k.solve(2,2,1);
+		//Start randomly on the user accessible board
+		int boardSize = 5;
+		Random rand = new Random();
+
+		Knights k = new Knights(boardSize);
+		solved = k.solve(rand.nextInt(boardSize)+2,rand.nextInt(boardSize)+2,1);
 		
 
 		

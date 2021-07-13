@@ -18,7 +18,7 @@ public class Knights{
     private int rows = 5;
     private int cols = 5;
     private int size=5;
-	private String clearScreen="\033[2J\033[1;1H";
+	private String clearScreen="\033[H\033[2J\n";
     //private String clearScreen="[0;0H\n";
 
     private void delay(int n)
@@ -50,6 +50,7 @@ public class Knights{
 			for (col = 2; col < cols+2 ; col++){
 				board[col][row] = 0;
 			}
+			
 		}
 	
     }//end Knights() constructor
@@ -96,7 +97,7 @@ public class Knights{
 		// change CHANGETHIS to the appropriate boolean
 		// HINT: we are tracking our moves in the board
 		// and also built that border of -1 values.
-		if (board[col][row] == -1){
+		if (board[col][row] == -1 || board[col][row] != 0){
 			return false;
 		}
 	
@@ -105,8 +106,9 @@ public class Knights{
 		// Change CHANGETHIS
 		board[col][row]=count;
 
-		delay(50);
+		delay(100);
 		System.out.println(clearScreen+this);
+		System.out.flush();
 
 
 		// Here we need to do try to do the 8 recursive calls
