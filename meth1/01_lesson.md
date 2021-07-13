@@ -4,7 +4,6 @@
 
 #### Prior Knowledge: Geometric angles and regular polygons (square,pentagon,octagon, etc), Logic conditional statements <>=.
 
-
 ### Aim: How do we use the for loop to draw a regular polygon / create some art!?
 
 ---
@@ -15,7 +14,7 @@ time: 3-5 mins
 Write down a sequence of steps that can be repeated to draw a pinwheel. (Image of pinwheel shown). 
 Physically mimic the steps you would take starting at putting a pen down to draw. Once you put your pen down, you start drawing. Be careful not to skip steps such as lifting your pen, which would cause you to stop drawing.
 
-- Teacher circulating between small groups.
+- Teacher circulating between small groups. Reminders to keep pen down, be specific with steps, computers are dumb and will do exactly as programmed.
 
 #### - CFUs/Misconceptions
 Teacher Q: How long is each side? How did you draw this side without lifting your pen? What is your starting point? What is your ending point? Did you start and end at the same point? Which set of instructions repeat?
