@@ -57,6 +57,9 @@ Students - Take a look at their pinwheel code, adjust if necessary and they will
 #### - CFUs/Misconceptions
 Teacher Q: Where do you indicate to stop your loop? And why did you choose that location/number? 
 
+- Teacher circulates and small group help
+
+
 ---
 
 ### Closing
