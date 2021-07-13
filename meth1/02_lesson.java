@@ -178,7 +178,7 @@ public class Cgol
 
     //*** Students will complete from here on down with the rules of life algo.
     //*** Have students copy and paste the rules in comments in this function so they can
-
+    //*** Try as challenge with a hint: Does the numNeighbors depend on if cell is alive/dead?
     //*** This version below optimizes the fact that neighbors not reliant on aive or dead
     //*** Code the alternate version (below) first
     //*** so they can follow along
