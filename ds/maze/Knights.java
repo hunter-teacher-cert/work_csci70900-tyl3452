@@ -77,6 +77,7 @@ public class Knights{
     public boolean solve(int col,int row, int count){
 		boolean solved = false;
 
+		System.out.println("In solve function: " + count);
 
 		// This should return true when we've solved the problem
 		// What should CHANGETHIS be?
