@@ -18,8 +18,8 @@ public class Knights{
     private int rows = 5;
     private int cols = 5;
     private int size=5;
-	private String clearScreen="\033[H\033[2J\n";
-    //private String clearScreen="[0;0H\n";
+	//private String clearScreen="\033[H\033[2J\n";
+    private String clearScreen="[0;0H\n";
 
     private void delay(int n)
     {
@@ -87,7 +87,7 @@ public class Knights{
 		// here, when do we know when we're done?
 		// HINT: you have an nxn board and are done when you've visited
 		// every board location
-		if (count>this.cols*this.rows) {
+		if (count > this.cols*this.rows) {
 			System.out.println(this);
 			return true;
 		}
@@ -105,10 +105,9 @@ public class Knights{
 		// what do we put into the board
 		// Change CHANGETHIS
 		board[col][row]=count;
-
-		delay(100);
+		delay(5);
 		System.out.println(clearScreen+this);
-		System.out.flush();
+		//System.out.flush();
 
 
 		// Here we need to do try to do the 8 recursive calls
