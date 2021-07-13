@@ -7,7 +7,7 @@ import java.util.Scanner;
  **/
 
 /**
- * Teacher notes for 02_lesson.java
+ * Eric Liu Teacher notes for 02_lesson.java
  * Assuming gone over CGOL rules and algorithm and students already done a short activity
  * on pen/paper to generate a few generations, have the rules of life below in the code
  * for them to implement. They will go over some default patterns and answers to compare with
