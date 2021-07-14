@@ -166,6 +166,7 @@ public class Cgol
        Birth:
        * Each dead cell adjacent to exactly 3 living neighbours is a birth cell. It will come alive next generation.
        NOTA BENE:  All births and deaths occur simultaneously. Together, they constitute a single generation
+
     */
     // current board
     //[- X -]
