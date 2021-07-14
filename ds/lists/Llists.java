@@ -1,3 +1,8 @@
+/**
+ * Team
+ * Eric Liu
+ */
+
 import java.io.*;
 import java.util.*;
 
@@ -25,6 +30,7 @@ public class Llist{
         Node currentNode;
         currentNode = front;
         String result = "";
+        
         while (currentNode != null){
             result = result + currentNode;
             // this is like i=i+1 is for arrays
