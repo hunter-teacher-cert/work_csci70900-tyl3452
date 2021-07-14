@@ -34,6 +34,29 @@ public class Driver{
         //    between the b and the c
         // 3. Write the code to delete the c
 
+        Node a = new Node ("a");
+        Node b = new Node ("b");
+        Node c = new Node ("c");
+        Node d = new Node ("d");
+        Node x = new Node ("x");
+
+        //current object and next object;  a points to b
+        a.setNext(b);
+        b.setNext(c);
+        c.setNext(d);
+
+        // 2. Write the code to insert an "x"
+            //    between the b and the c
+        x.setNext(c); //point x to c
+        b.setNext(x); //point b to x
+
+            // 3. Write the code to delete the c
+        x.setNext(d); //end result:  a, b, x, d;  c is still in memory. Lines 36-38, 46)
+
+        System.out.println (a); //prints a
+        System.out.println (a.getNext()); //prints b
+        System.out.println (a.getNext().getNext()); //prints x
+        System.out.println (a.getNext().getNext().getNext()); //prints d
 	
     }//end main()
 }//end Driver class
