@@ -46,11 +46,11 @@ public class Driver{
         c.setNext(d);
 
         // 2. Write the code to insert an "x"
-            //    between the b and the c
+        //    between the b and the c
         x.setNext(c); //point x to c
         b.setNext(x); //point b to x
 
-            // 3. Write the code to delete the c
+        // 3. Write the code to delete the c
         x.setNext(d); //end result:  a, b, x, d;  c is still in memory. Lines 36-38, 46)
 
         System.out.println (a); //prints a
