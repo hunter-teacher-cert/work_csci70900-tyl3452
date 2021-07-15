@@ -59,12 +59,12 @@ public class Driver{
         System.out.println (a.getNext().getNext().getNext()); //prints d
 
         System.out.println("\n");
-	    System.out.println("Llist");
-	    System.out.println("-----------");
+	      System.out.println("Llist");
+        System.out.println("-----------");
 
-	    Llist ll = new Llist();
+        Llist ll = new Llist();
         System.out.print("LL instantiated: ");
-	    System.out.println(ll);
+        System.out.println(ll);
         ll.addFront("x");
         ll.addFront("y");
         ll.addFront("z");
