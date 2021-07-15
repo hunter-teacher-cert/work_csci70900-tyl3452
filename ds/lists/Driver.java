@@ -70,7 +70,38 @@ public class Driver{
         ll.addFront("z");
         System.out.print("LL added xyz: ");
         System.out.println(ll); // expected output is z y x
+        
+        // isEmpty
+        System.out.println("ll.isEmpty(): " + ll.isEmpty());
 
+        // length
+        System.out.println("ll.length(): " + ll.length());
+
+        // get
+        System.out.println("ll.get(0): " + ll.get(0)); // a
+        System.out.println("ll.get(2): " + ll.get(2)); // c
+        System.out.println("ll.get(5): " + ll.get(5)); // null
+
+        // set
+        ll.set(0,"apple");
+        System.out.println("ll.get(0): " + ll.get(0)); // apple
+        ll.set(2,"carrot");
+        System.out.println("ll.get(2): " + ll.get(2)); // carrot
+        ll.set(5,"pear"); // shouldn't work
+        System.out.println("ll.get(5): " + ll.get(5)); // null
+        System.out.println(ll);
+
+        // insert
+        ll.insert(2,"banana");
+        System.out.println(ll); // apple --> b --> banana --> carrot --> null
+
+        // search
+        System.out.println("ll.search('carrot'): " + ll.search("carrot")); // 3
+        System.out.println("ll.search('tomato'): " + ll.search("tomato")); // -1
+
+        // remove
+        ll.remove(2);
+        System.out.println(ll); // apple --> b --> carrot --> null
 
 
     }//end main()
