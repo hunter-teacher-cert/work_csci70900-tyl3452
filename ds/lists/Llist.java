@@ -1,5 +1,7 @@
 /**
- * Team
+ * Team 2
+ * Michelle P.
+ * Michelle B.
  * Eric Liu
  */
 
