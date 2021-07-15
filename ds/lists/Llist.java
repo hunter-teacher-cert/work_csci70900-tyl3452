@@ -20,9 +20,9 @@ public class Llist{
         // make the new node
         Node newNode = new Node(data);
         // point it to what front points to
-        newNode.setNext = front.getNext();
+        newNode.setNext(front);
         // point front to the new node
-        front.setNext(newNode);
+        front = newNode;
 
     }//end addFront()
 
@@ -30,16 +30,17 @@ public class Llist{
         Node currentNode;
         currentNode = front;
         String result = "";
-        
+
         while (currentNode != null){
             result = result + currentNode;
+            result += "->";
             // this is like i=i+1 is for arrays
-            // but for linked lists 
+            // but for linked lists
             currentNode = currentNode.getNext();
         }
         result = result + "null";
         return result;
 
     }//end toString()
-    
+
 }//end class Llists

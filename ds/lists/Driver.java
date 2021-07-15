@@ -13,7 +13,7 @@ public class Driver{
         Node n;
         n = new Node();
         n.setData("Eduardo");
-        
+
 
         Node n2 = new Node("Brian");
         n.setNext(n2);
@@ -26,8 +26,8 @@ public class Driver{
         n.getNext().setNext(new Node("Steph"));
         System.out.println(n2.getNext());
         System.out.println(n.getNext().getNext());
-        
-        Node L;	
+
+        Node L;
         // 1.Create a new  list that looks like:
         //   L->"a"->"b"->"c"->"d"
         // 2. Write the code to insert an "x"
@@ -57,6 +57,21 @@ public class Driver{
         System.out.println (a.getNext()); //prints b
         System.out.println (a.getNext().getNext()); //prints x
         System.out.println (a.getNext().getNext().getNext()); //prints d
-	
+
+        System.out.println("\n");
+	    System.out.println("Llist");
+	    System.out.println("-----------");
+
+	    Llist ll = new Llist();
+        System.out.print("LL instantiated: ");
+	    System.out.println(ll);
+        ll.addFront("x");
+        ll.addFront("y");
+        ll.addFront("z");
+        System.out.print("LL added xyz: ");
+        System.out.println(ll); // expected output is z y x
+
+
+
     }//end main()
 }//end Driver class
