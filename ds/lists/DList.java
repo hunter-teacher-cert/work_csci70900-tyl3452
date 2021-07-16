@@ -16,7 +16,7 @@ public class Dlist{
 
     public  Dlist(){
 	    front = null;
-        back = null;
+      back = null;
     }//default constructor
 
     // Add a new node containing data
@@ -168,6 +168,7 @@ public class Dlist{
       while(currentNode != null){
         if(i == index-1){
           currentNode.setNext(currentNode.getNext().getNext());
+          currentNode.getNext().setPrev(currentNode);
           break;
         }
         i++;
