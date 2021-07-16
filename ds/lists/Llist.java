@@ -1,13 +1,9 @@
 /**
- * Team 2
- * Michelle P.
- * Michelle B.
- * Eric Liu
  * 
- * Team 2
+ * Team 1
  * Victoria B.
  * Brian M.
- * Eric Liu
+ * Eric
  */
 
 import java.io.*;

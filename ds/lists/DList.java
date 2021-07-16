@@ -14,7 +14,7 @@ public class Dlist{
     private Node front; // the front of the list
 
     public  Dlist(){
-	    front = null;
+        front = null;
     }//default constructor
 
     // Add a new node containing data
@@ -51,55 +51,55 @@ public class Dlist{
     // returns True if there is nothing in the list
     // False otherwise
     public boolean isEmpty(){
-      if(front == null) {
-        return true;
-      }
-      return false;
+        if(front == null) {
+          return true;
+        }
+        return false;
     }
 
     // returns the number of items in the list
     // Hint: look at the toString
     // to remind you how to traverse down the list
     public int length(){
-      int counter = 0;
-      Node currentNode = front;
-      while(currentNode != null){
-        counter++;
-        currentNode = currentNode.getNext();
-      }
-      return counter;
+        int counter = 0;
+        Node currentNode = front;
+        while(currentNode != null){
+          counter++;
+          currentNode = currentNode.getNext();
+        }
+        return counter;
     }
 
     // returns the item at location index;
     // returns null if there aren't enough
     // items. Starts with index 0
     public String get(int index){
-      int i = 0;
-      Node currentNode = front;
-      while(currentNode != null){
-        if(i == index){
-          return currentNode.getData();
+        int i = 0;
+        Node currentNode = front;
+        while(currentNode != null){
+          if(i == index){
+            return currentNode.getData();
+          }
+          i++;
+          currentNode = currentNode.getNext();
         }
-        i++;
-        currentNode = currentNode.getNext();
-      }
-      return null;
+        return null;
     }
 
     // sets the item at location index (starting
     // with 0) to value.
     // only sets if the index is within range
     public void set(int index, String value){
-      int i = 0;
-      Node currentNode = front;
-      while(currentNode != null){
-        if(i == index){
-          currentNode.setData(value);
-          break;
+        int i = 0;
+        Node currentNode = front;
+        while(currentNode != null){
+          if(i == index){
+            currentNode.setData(value);
+            break;
+          }
+          i++;
+          currentNode = currentNode.getNext();
         }
-        i++;
-        currentNode = currentNode.getNext();
-      }
     }
 
     // insert an item before index.
@@ -115,19 +115,31 @@ public class Dlist{
     // apple --> b --> banana --> carrot --> null
 
     public void insert(int index, String value){
-      int i = 0;
-      Node currentNode = front;
-      while(currentNode != null){
-        if(i == index-1){
-          Node newNode = new Node(value,currentNode.getNext(),currentNode);
-          currentNode.getNext().setPrev(newNode);
-          currentNode.setNext(newNode);
-          newNode.setPrev(currentNode);
-          break;
+        
+
+        Node newNode = new Node(value);
+        if (front == null) {
+            currentNode.getNext().setPrev(newNode);
+            front = newNode;
+        } else {
+            int i = 0;
+            Node currentNode = front;
+
+
         }
-        i++;
-        currentNode = currentNode.getNext();
-      }
+
+
+        // while(currentNode != null){
+        //   if(i == index-1){
+        //     Node newNode = new Node(value,currentNode.getNext(),currentNode);
+        //     currentNode.getNext().setPrev(newNode);
+        //     currentNode.setNext(newNode);
+        //     newNode.setPrev(currentNode);
+        //     break;
+        //   }
+        //   i++;
+        //   currentNode = currentNode.getNext();
+        // }
     }
 
     // returns the index of the first item with
