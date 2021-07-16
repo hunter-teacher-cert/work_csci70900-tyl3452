@@ -3,6 +3,11 @@
  * Michelle P.
  * Michelle B.
  * Eric Liu
+ * 
+ * Team 2
+ * Victoria B.
+ * Brian M.
+ * Eric Liu
  */
 
 import java.io.*;
