@@ -12,11 +12,9 @@ import java.util.*;
 
 public class Dlist{
     private Node front; // the front of the list
-    private Node back;
 
     public  Dlist(){
 	    front = null;
-      back = null;
     }//default constructor
 
     // Add a new node containing data
@@ -24,21 +22,14 @@ public class Dlist{
     public void addFront(String data){
         // make the new node
         Node newNode = new Node(data);
-        // point it to what front points to
+        // prev for first node to new node
+        front.setPrev(newNode);
+        // point new node to what front points to
         newNode.setNext(front);
         // point front to the new node
         front = newNode;
 
     }//end addFront()
-
-    //add new node to end of the list
-    public void addBack(String data){
-        // make the new node
-        Node newNode = new Node(data);
-        newNode.setPrev(back);
-        back = newNode;
-
-    }//end addBack()
 
     public String toString(){
         Node currentNode;

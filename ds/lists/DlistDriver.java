@@ -1,10 +1,5 @@
 /**
- * Team 2
- * Michelle Best
- * Michelle Persaud
- * Eric Liu
- * 
- * Team 2
+ * Team 1
  * Victoria B.
  * Brian M.
  * Eric Liu
