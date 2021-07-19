@@ -57,6 +57,9 @@ public class SortDemoDriver {
         System.out.println("sd2 binarySearch for 20: " + sd2.binarySearch(20));
 
 
+        SortDemo sd3 = new SortDemo();
+        sd.testMerge();
+
     }//end main
 
 }
