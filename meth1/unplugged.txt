@@ -15,20 +15,29 @@ Pick one student as the front. To get things started.
 Student instructions:
 Each student writes two pieces of data
     1 - data (word/number). There own, do not need to share data.
-    2 - who the next person is (point to the next student or computer number)
+    2 - who the next person is (point to the next student)
 
-Go from one to the next and have each student pick the next student. 
+Ask another student not in LL to find the data at a specific element/node in the LL. 
+Student has to start from the front and can only ask two questions
+    1. What's your data?
+    2. Who is the next student?
+Go from one to the next and have each student pick the next student.
 
 # Concept
     1 - Structure of each node. 
     2 - How to traverse a list only knowing those two pieces of data?
-    3 - Try an insert.
+    3 - Try an insert. Try a remove. 
 
 Student Reflections:
     - Do the other students need to know the entire list? Every single piece of data?
     - For insert, do you need to adjust the entire list vs just two nodes only
-    - Similarly as insert, do remove(pop). As compared to a traditional list, you have to move each element over
+    - Do remove(pop). As compared to a traditional list, you have to move each element over
     - (optional) Multiple operations on list at same time (as long as different indices)
-    - 
+    - Comparison with List data structure - advantages/disadvantages
+    - Have students describe the advantages/disadvantages of LL and Lists.
+
+
+
+
 
 
