@@ -5,6 +5,8 @@ Eric Liu
 
 # Topic - Linked List
 
+# Previous knowledge - Lists
+
 # Unplugged Activity 
 
 # Setup 
