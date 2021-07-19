@@ -1,0 +1,27 @@
+Team 1
+Peter Tsun
+Eric Liu
+
+
+# Topic - Linked List
+
+# Unplugged Activity 
+
+# Setup 
+Rules are: the student has to name or point to the next.
+Remind students to remember just those two pieces of data.
+Pick one student as the front. To get things started.
+
+Student instructions:
+Each student writes two pieces of data
+    1 - data (word/number). There own, do not need to share data.
+    2 - who the next person is (point to the next student or computer number)
+
+Go from one to the next and have each student pick the next student. 
+
+# Concept
+    1 - Structure of each node. 
+    2 - How to traverse a list only knowing those two pieces of data?
+    3 - Try an insert, 
+
+
