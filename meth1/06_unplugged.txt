@@ -28,7 +28,7 @@ Go from one to the next and have each student pick the next student.
 # Concept
     1 - Structure of each node. 
     2 - How to traverse a list only knowing those two pieces of data?
-    3 - Try an insert. Try a remove. 
+    3 - (optional) Try an insert. Try a remove. 
 
 Student Reflections:
     - Do the other students need to know the entire list? Every single piece of data?
