@@ -3,6 +3,11 @@
  * Dwayne Levene
  * Eduardo Leite
  * Eric Liu
+ *
+ * MERGESORT Team 1
+ * Peter Tsun
+ * Eric Liu
+ *
  */
 
 import java.io.*;
@@ -13,9 +18,9 @@ Setup:
  1.Make a folder under your work repo named: ds
  2. Make another folder under that named sort1
  3. Copy this file and SortDemoDriver.java into the ds/sort1 folder
- 
+
 Lab:
-Part 1:  
+Part 1:
   1. Analyze the two constructors - try to figure out how they work.
   2. Compile and run the program (SortDemoDriver.java and SortDemo.java) and confirm
    the behavior of the constructors.
@@ -31,7 +36,7 @@ public class SortDemo{
 
     /* Instance Variables */
     private ArrayList<Integer> data;  // to store the data
-    private Random r; 
+    private Random r;
 
     //default constructor that creates Integer ArrayList of 15 random integers from 0 to 20
     public SortDemo(){
@@ -41,7 +46,7 @@ public class SortDemo{
             data.add(r.nextInt(20));
         }
     }
-    
+
     //constructor with target size, initialize ArrayList of Integers random from 0 to 20.
     public SortDemo(int size){
         data = new ArrayList<Integer>();
@@ -49,7 +54,7 @@ public class SortDemo{
         for (int i=0;i<size;i++){
             data.add(r.nextInt(20));
         }
-	
+
     }
 
     /*
@@ -65,7 +70,7 @@ public class SortDemo{
 	    // start a variable at the one after start
         // your code here
         int smallIndex = start;
-        
+
         // loop from that variable to end and update smallIndex as needed
         // your code here
         for(int i=start+1; i<data.size(); i++){
@@ -73,7 +78,7 @@ public class SortDemo{
             smallIndex = i;
           }
         }//end for
-        
+
         return smallIndex;
 
     }
@@ -88,13 +93,13 @@ public class SortDemo{
             // find the smallet index from i to end
             // your code here
             smallIndex = findSmallestIndex(i);
-  
+
             // swap the item at that index and i
             // your code here
             tempInt = data.get(smallIndex);
             data.set(smallIndex, data.get(i));
             data.set(i, tempInt);
-            
+
         }
       }
 
@@ -102,7 +107,7 @@ public class SortDemo{
 
     /* If you finish the lab early you can get started on this */
     /**
-     * 
+     *
      * @param value int index first found element equal to value
      * @return -1 if not found, index of target
      */
@@ -115,10 +120,10 @@ public class SortDemo{
             return i;
           }
         }//end for
-        
+
         return -1; // replace this return
     }//end linearSearch()
-    
+
     /* If you finish the lab early you can get started on this */
     /**
      * @param value int of target in search
@@ -129,11 +134,11 @@ public class SortDemo{
         int lowerIndex = 0;
         int upperIndex = data.size()-1;
         int middleIndex = data.size()/2;
-        
+
         /* if upper crosses lower it's not there and the lop should exit the loop
         and if the item is at middle you should exit the loop
-        
-            you have to replace the "replacethiswithrealexpression" boolean 
+
+            you have to replace the "replacethiswithrealexpression" boolean
             with a correct expression based on lowerIndex and upperIndex
         */
         while (lowerIndex <= upperIndex)
@@ -150,21 +155,21 @@ public class SortDemo{
                 lowerIndex = middleIndex + 1;
             } else if (value < data.get(middleIndex)) {
                 upperIndex = middleIndex - 1;
-            } 
+            }
 
             //update middle index
             middleIndex = (lowerIndex + upperIndex) / 2;
-            
+
         }//end while
-        
+
         /* replace this return to either return the value if it was found and -1
         if upperIndex and lowerIndex crossed
-        */    
+        */
         return -1;
 
     }//end binarySearch()
-    
-	
+
+
     public String toString() {
 	    return ""+data;
     }
@@ -181,14 +186,36 @@ public class SortDemo{
     // Return: a new ArrayList of Integers that is the result
     //         of merging a and b. The new ArrayList
     //         should be in increasing order
-    private ArrayList<Integer> merge(ArrayList<Interger> a, ArrayList<Integer> b){
-        
-      
-      
-      return null;
+    private ArrayList<Integer> merge(ArrayList<Integer> a, ArrayList<Integer> b){
+        int iA = 0;
+        int iB = 0;
+        int lenA = a.size();
+        int lenB = b. size();
+        ArrayList<Integer> newArrayList = new ArrayList<Integer>();
+        while(iA < lenA || iB < lenB){  //loop until exhaust both arraylists
+          if (iA < lenA && iB < lenB){
+            if (a.get(iA) < b.get(iB)){
+              newArrayList.add(a.get(iA));
+              iA++;
+            } else {
+              newArrayList.add(b.get(iB));
+              iB++;
+            }
+        } else if (iA < lenA &&  iB >= lenB) {  //b exhausted first
+              newArrayList.add(a.get(iA));
+              iA++;
+          } else if (iA >= lenA && iB < lenB){  //a is exhausted first
+              newArrayList.add(b.get(iB));
+              iB++;
+          }
+        }
+
+        return newArrayList;
+
+
     }
-    
-    
+
+
     private ArrayList<Integer> fillForMerge(int size){
 	      ArrayList<Integer> a = new ArrayList<Integer>();
 	      int lastVal = r.nextInt(10);
@@ -197,7 +224,7 @@ public class SortDemo{
 	          lastVal = lastVal + r.nextInt(10);
   	    }
 	      return a;
-	
+
     }//end fillForMerge
 
 
@@ -209,7 +236,7 @@ public class SortDemo{
         b = fillForMerge(20);
         System.out.println(a);
         System.out.println(b);
-	
+
 
     }//end testMerge
 
