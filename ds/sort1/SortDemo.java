@@ -219,10 +219,10 @@ public class SortDemo{
       if (lenList == 1 || lenList == 0){    // base case
         return inputList; // since a one-item array is sorted
       } else {
-        ArrayList<Integer> leftList = (inputList.subList(0, lenList/2));
-        ArrayList<Integer> rightList = inputList.subList(lenList/2+1, lenList);
+        ArrayList<Integer> leftList = new ArrayList(inputList.subList(0, lenList/2));
+        ArrayList<Integer> rightList = new ArrayList(inputList.subList(lenList/2+1, lenList));
         //mergeSort( merge(inputList.subList(0,lenList/2), inputList.subList((lenList/2) + 1, lenList)) );
-        merge(mergeSort(, mergeSort() );
+        return merge(mergeSort(leftList), mergeSort(rightList) );
       }
   }//end mergeSort
 
@@ -256,13 +256,16 @@ public class SortDemo{
 
         //Test mergeSort
         System.out.println("Testing mergeSort");
-        d = {1,3,8,7,8,15,21,32,99,0,123,789,54,4}
+        //d = {1,3,8,7,8,15,21,32,99,0,123,789,54,4};
+        d.add(1);
+        d.add(3);
+        d.add(8);
+        d.add(7);
+        d.add(8);
+        d.add(4);
+        d.add(0);
         System.out.println("d: " + d);
-        System.out.println("d.mergeSort(): " + mergeSort(d));
-
-
-
-
+        System.out.println("mergeSort(d): " + mergeSort(d));
 
 
     }//end testMerge
