@@ -216,7 +216,7 @@ public class SortDemo{
 
     public ArrayList<Integer> mergeSort(ArrayList<Integer> inputList){
       int lenList = inputList.size();
-      if (lenList == 1 || lenList == 0){    // base case
+      if (lenList == 1 || lenList == 1){    // base case
         return inputList; // since a one-item array is sorted
       } else {
         ArrayList<Integer> leftList = new ArrayList(inputList.subList(0, lenList/2));
@@ -256,7 +256,7 @@ public class SortDemo{
 
         //Test mergeSort
         System.out.println("Testing mergeSort");
-        //d = {1,3,8,7,8,15,21,32,99,0,123,789,54,4};
+        //d = {1,3,8,7,8,0};
         d.add(1);
         d.add(3);
         d.add(8);
