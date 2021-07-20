@@ -14,7 +14,7 @@ Rules are: the student has to name or point to the next.
 Remind students to remember just those two pieces of data.
 Pick one student as the front. To get things started.
 
-Student instructions:
+Student instructions: To generate a LL
 Each student writes two pieces of data
     1 - data (word/number). There own, do not need to share data.
     2 - who the next person is (point to the next student)
@@ -37,6 +37,7 @@ Student Reflections:
     - (optional) Multiple operations on list at same time (as long as different indices)
     - Comparison with List data structure - advantages/disadvantages
     - Have students describe the advantages/disadvantages of LL and Lists.
+    - Other students not involved with activity write down each step which becomes their pseudocode
 
 
 
