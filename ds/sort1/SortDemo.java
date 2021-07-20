@@ -211,9 +211,20 @@ public class SortDemo{
         }
 
         return newArrayList;
+    }//end merge
 
 
-    }
+    public ArrayList<Integer> mergeSort(ArrayList<Integer> inputList){
+      int lenList = inputList.size();
+      if (lenList == 1 || lenList == 0){    // base case
+        return inputList; // since a one-item array is sorted
+      } else {
+        ArrayList<Integer> leftList = (inputList.subList(0, lenList/2));
+        ArrayList<Integer> rightList = inputList.subList(lenList/2+1, lenList);
+        //mergeSort( merge(inputList.subList(0,lenList/2), inputList.subList((lenList/2) + 1, lenList)) );
+        merge(mergeSort(, mergeSort() );
+      }
+  }//end mergeSort
 
 
     private ArrayList<Integer> fillForMerge(int size){
@@ -232,10 +243,26 @@ public class SortDemo{
 
         ArrayList<Integer> a = new ArrayList<Integer>();
         ArrayList<Integer> b = new ArrayList<Integer>();
+        ArrayList<Integer> c = new ArrayList<Integer>();
+        ArrayList<Integer> d = new ArrayList<Integer>();
+
+        //Test merge
         a = fillForMerge(20);
-        b = fillForMerge(20);
-        System.out.println(a);
-        System.out.println(b);
+        b = fillForMerge(15);
+        System.out.println("a: " + a);
+        System.out.println("b: " + b);
+        c = merge(a,b);
+        System.out.println("c=merge(a,b): " + c);
+
+        //Test mergeSort
+        System.out.println("Testing mergeSort");
+        d = {1,3,8,7,8,15,21,32,99,0,123,789,54,4}
+        System.out.println("d: " + d);
+        System.out.println("d.mergeSort(): " + mergeSort(d));
+
+
+
+
 
 
     }//end testMerge
