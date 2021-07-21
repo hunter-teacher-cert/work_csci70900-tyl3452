@@ -31,6 +31,34 @@ public class Dlist{
 
     }//end addFront()
 
+    
+    // Add a new node containing data
+    // at the back or end of the list
+    public void addBack(String data){
+
+      Node currentNode = front;
+      //go thru to get to last item
+      while(currentNode.getNext() != null){
+          currentNode = currentNode.getNext();
+      }
+
+
+
+      // make the new node
+      Node newNode = new Node(data);
+      // point new node to what front points to
+      newNode.setNext(null);
+      // point new node prev to null, it's the first item
+      newNode.setPrev(currentNode);
+      // point front to the new node
+
+      //one off if list is empty
+      if(front == null) {
+        front = newNode;
+      }
+
+  }//end addFront()
+
     public String toString(){
         Node currentNode;
         currentNode = front;
@@ -115,36 +143,20 @@ public class Dlist{
     // apple --> b --> banana --> carrot --> null
 
     public void insert(int index, String value){
-        
-
-
-
-
         Node currentNode = front;
         int i = 0;
         while(currentNode != null) {
-            if (currentNode.getData() == value) {
+            if (i == index) {
                 Node newNode = new Node(value);
-                newNode.setNext();
-
+                currentNode.getPrev().setNext(newNode);
+                newNode.setPrev(currentNode.getPrev());
+                newNode.setNext(currentNode);
+                currentNode.setPrev(newNode);
             }
+            i++;
+            currentNode = currentNode.getNext();
 
         }//end while
-
-
-
-
-
-        if (front == null) {
-            currentNode.getNext().setPrev(newNode);
-            front = newNode;
-        } else {
-            int i = 0;
-            Node currentNode = front;
-
-
-        }
-
 
         // while(currentNode != null){
         //   if(i == index-1){
@@ -194,6 +206,6 @@ public class Dlist{
         i++;
         currentNode = currentNode.getNext();
       }
-    }
+
 
 }//end class Llists
