@@ -42,22 +42,22 @@ public class Dlist{
           currentNode = currentNode.getNext();
       }
 
-
-
       // make the new node
       Node newNode = new Node(data);
-      // point new node to what front points to
+      // point new node to null since it's end of list
       newNode.setNext(null);
-      // point new node prev to null, it's the first item
+      // point new node prev to the second to the "current" last item
       newNode.setPrev(currentNode);
-      // point front to the new node
 
-      //one off if list is empty
+      // point "current" last item to the new node
+      // one off if list is empty
       if(front == null) {
         front = newNode;
+      } else {
+        currentNode.setNext(newNode);
       }
 
-  }//end addFront()
+  }//end addBack()
 
     public String toString(){
         Node currentNode;
@@ -143,33 +143,29 @@ public class Dlist{
     // apple --> b --> banana --> carrot --> null
 
     public void insert(int index, String value){
+        //find the current node
         Node currentNode = front;
         int i = 0;
-        while(currentNode != null) {
-            if (i == index) {
-                Node newNode = new Node(value);
-                currentNode.getPrev().setNext(newNode);
-                newNode.setPrev(currentNode.getPrev());
-                newNode.setNext(currentNode);
-                currentNode.setPrev(newNode);
-            }
+        while(currentNode != null && i != index) {
             i++;
             currentNode = currentNode.getNext();
 
         }//end while
 
-        // while(currentNode != null){
-        //   if(i == index-1){
-        //     Node newNode = new Node(value,currentNode.getNext(),currentNode);
-        //     currentNode.getNext().setPrev(newNode);
-        //     currentNode.setNext(newNode);
-        //     newNode.setPrev(currentNode);
-        //     break;
-        //   }
-        //   i++;
-        //   currentNode = currentNode.getNext();
-        // }
-    }
+        //if index out of range, nothing to remove
+        if(currentNode == null) {
+            return;
+        } else {
+            Node newNode = new Node(value);
+            if(currentNode.getPrev() != null){  // in case at first element
+                currentNode.getPrev().setNext(newNode);
+            }
+            newNode.setPrev(currentNode.getPrev());
+            newNode.setNext(currentNode);
+            currentNode.setPrev(newNode);
+        }
+            
+    }//end insert()
 
     // returns the index of the first item with
     // data value key. Returns -1 if not found
@@ -195,17 +191,28 @@ public class Dlist{
     // 0         1     2
     // apple --> b --> carrot --> null
     public void remove(int index){
-      int i = 0;
-      Node currentNode = front;
-      while(currentNode != null){
-        if(i == index){
-          currentNode.getNext().setPrev(currentNode.getPrev());
-          currentNode.getPrev().setNext(currentNode.getNext());
-          break;
+        //find the current node
+        Node currentNode = front;
+        int i = 0;
+        while(currentNode != null && i != index) {
+            i++;
+            currentNode = currentNode.getNext();
+        }//end while
+
+        //if index out of range, nothing to remove
+        if(currentNode == null) {
+            return;
+        } else {
+            if(currentNode.getPrev() != null){  // in case at first element
+                currentNode.getPrev().setNext(currentNode.getNext());
+            }
+            if(currentNode.getNext() != null){ // in case at last element
+                currentNode.getNext().setPrev(currentNode.getPrev());
+            } 
+            
         }
-        i++;
-        currentNode = currentNode.getNext();
-      }
+
+     }//end remove()
 
 
 }//end class Llists
