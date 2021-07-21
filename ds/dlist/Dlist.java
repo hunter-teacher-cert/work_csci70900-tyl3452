@@ -38,7 +38,7 @@ public class Dlist{
 
       Node currentNode = front;
       //go thru to get to last item
-      while(currentNode.getNext() != null){
+      while(currentNode != null && currentNode.getNext() != null){
           currentNode = currentNode.getNext();
       }
 
@@ -51,7 +51,7 @@ public class Dlist{
 
       // point "current" last item to the new node
       // one off if list is empty
-      if(front == null) {
+      if(currentNode == null) {
         front = newNode;
       } else {
         currentNode.setNext(newNode);

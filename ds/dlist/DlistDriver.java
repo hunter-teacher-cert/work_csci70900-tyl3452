@@ -32,7 +32,10 @@ public class DlistDriver{
         System.out.println(n);  // expected output is null
         n.addBack("d");
         System.out.println(n);  // expected output is d->null
-
+        n.addBack("e");
+        System.out.println(n);  // expected output is d->e->null
+        n.addFront("f");
+        System.out.println(n);  // expected output is f->d->e->null
 
     }//end main()
 }//end Driver class
