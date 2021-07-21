@@ -220,19 +220,22 @@ public class SortDemo{
         return inputList; // since a one-item array is sorted
       } else {
         ArrayList<Integer> leftList = new ArrayList(inputList.subList(0, lenList/2));
-        ArrayList<Integer> rightList = new ArrayList(inputList.subList(lenList/2+1, lenList));
+        ArrayList<Integer> rightList = new ArrayList(inputList.subList(lenList/2, lenList));
         //mergeSort( merge(inputList.subList(0,lenList/2), inputList.subList((lenList/2) + 1, lenList)) );
         return merge(mergeSort(leftList), mergeSort(rightList) );
       }
   }//end mergeSort
 
 
-    private ArrayList<Integer> fillForMerge(int size){
+    private ArrayList<Integer> fillForMerge(int size, boolean rand){
 	      ArrayList<Integer> a = new ArrayList<Integer>();
-	      int lastVal = r.nextInt(10);
+	      int lastVal = r.nextInt(40);
 	      for (int i = 0 ; i < size ; i=i+1){
 	          a.add(lastVal);
-	          lastVal = lastVal + r.nextInt(10);
+            if (rand == true)
+              lastVal = r.nextInt(40);
+            else
+	            lastVal = lastVal + r.nextInt(40);
   	    }
 	      return a;
 
@@ -247,8 +250,8 @@ public class SortDemo{
         ArrayList<Integer> d = new ArrayList<Integer>();
 
         //Test merge
-        a = fillForMerge(20);
-        b = fillForMerge(15);
+        a = fillForMerge(20,false);
+        b = fillForMerge(15,false);
         System.out.println("a: " + a);
         System.out.println("b: " + b);
         c = merge(a,b);
@@ -257,13 +260,14 @@ public class SortDemo{
         //Test mergeSort
         System.out.println("Testing mergeSort");
         //d = {1,3,8,7,8,0};
-        d.add(1);
-        d.add(3);
-        d.add(8);
-        d.add(7);
-        d.add(8);
-        d.add(4);
-        d.add(0);
+        // d.add(1);
+        // d.add(3);
+        // d.add(8);
+        // d.add(7);
+        // d.add(8);
+        // d.add(4);
+        // d.add(0);
+        d = fillForMerge(37, true);
         System.out.println("d: " + d);
         System.out.println("mergeSort(d): " + mergeSort(d));
 
