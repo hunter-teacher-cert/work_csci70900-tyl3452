@@ -23,9 +23,12 @@ public class Driver{
 		int boardSize = 5;
 		Random rand = new Random();
 
+
+
 		//Test knights tour
 		Knights k = new Knights(boardSize);
-		solved = k.solve(rand.nextInt(boardSize)+2,rand.nextInt(boardSize)+2,1);
+		solved = k.solve(2+2,2+2,1);		// Start knight at (3,3)
+		//solved = k.solve(rand.nextInt(boardSize)+2,rand.nextInt(boardSize)+2,1);
 
 
 		
