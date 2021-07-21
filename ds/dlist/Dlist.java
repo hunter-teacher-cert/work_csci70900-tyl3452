@@ -199,15 +199,19 @@ public class Dlist{
             currentNode = currentNode.getNext();
         }//end while
 
+        System.out.println("Debug in remove - current node: " + currentNode);
+
         //if index out of range, nothing to remove
-        if(currentNode == null) {
-            return;
-        } else {
-            if(currentNode.getPrev() != null){  // in case at first element
+        if(currentNode != null) {
+            if(currentNode.getPrev() != null){  // when not first element
                 currentNode.getPrev().setNext(currentNode.getNext());
+            } else {                            // when first element, set front to next node
+                front = currentNode.getNext();
             }
+
             if(currentNode.getNext() != null){ // in case at last element
                 currentNode.getNext().setPrev(currentNode.getPrev());
+
             } 
             
         }

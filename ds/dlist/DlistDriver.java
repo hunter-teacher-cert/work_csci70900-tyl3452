@@ -18,16 +18,20 @@ public class DlistDriver{
         System.out.println(n);  // expected output is a->b->null
         n.addBack("c");
         System.out.println(n);  // expected output is a->b->c->null
+        n.addBack("x");
+        System.out.println(n);  // expected output is a->b->c->x->null
 
         //test removes 
-        n.remove(1);
-        System.out.println(n);  // expected output is a->c->null
+        n.remove(2);
+        System.out.println(n);  // expected output is a->b->x->null
+        n.remove(2);
+        System.out.println(n);  // expected output is a->b->null
         n.remove(0);
-        System.out.println(n);  // expected output is c->null
+        System.out.println(n);  // expected output is b->null
         n.remove(0);
         System.out.println(n);  // expected output is null
         n.addBack("d");
-        System.out.println(n);  // expected output is ""
+        System.out.println(n);  // expected output is d->null
 
 
     }//end main()
