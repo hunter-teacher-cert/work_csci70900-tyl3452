@@ -22,10 +22,10 @@ public class Dlist{
     public void addFront(String data){
         // make the new node
         Node newNode = new Node(data);
-        // prev for first node to new node
-        front.setPrev(newNode);
         // point new node to what front points to
         newNode.setNext(front);
+        // point new node prev to null, it's the first item
+        newNode.setPrev(null);
         // point front to the new node
         front = newNode;
 
@@ -117,7 +117,24 @@ public class Dlist{
     public void insert(int index, String value){
         
 
-        Node newNode = new Node(value);
+
+
+
+        Node currentNode = front;
+        int i = 0;
+        while(currentNode != null) {
+            if (currentNode.getData() == value) {
+                Node newNode = new Node(value);
+                newNode.setNext();
+
+            }
+
+        }//end while
+
+
+
+
+
         if (front == null) {
             currentNode.getNext().setPrev(newNode);
             front = newNode;
@@ -169,9 +186,9 @@ public class Dlist{
       int i = 0;
       Node currentNode = front;
       while(currentNode != null){
-        if(i == index-1){
-          currentNode.setNext(currentNode.getNext().getNext());
-          currentNode.getNext().setPrev(currentNode);
+        if(i == index){
+          currentNode.getNext().setPrev(currentNode.getPrev());
+          currentNode.getPrev().setNext(currentNode.getNext());
           break;
         }
         i++;

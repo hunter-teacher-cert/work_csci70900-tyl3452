@@ -19,7 +19,10 @@ public class DlistDriver{
         n.addFront(b);
         n.addFront(a);
         n.addBack(c);
-        
+        System.out.println(n);  // expected output is a b c
+        //Remove b
+        n.remove(1);
+        System.out.println(n);  // expected output is a c
 
 
     }//end main()
