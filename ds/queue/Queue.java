@@ -8,37 +8,38 @@ import java.util.*;
 /**
  * FIFO Queue
  */
-public class Queue extends Llist{
-    private Node front, end;
+public class Queue {
+    private Llist myList;
 
     public Queue() {
-        this.front = null;
-        end = null;
+        myList = new Llist();
     }//default constructor
 
     public void enqueue(String value) {
-        Node newNode = new Node(value);
-        newNode.setNext(null);
-        if (end != null) {
-            front = newNode;
-            end.setNext(newNode);
-        }
-        end = newNode;
+        myList.addBack(value);
     }//end enqueue()
 
     public String dequeue() {
-        String item = get(0);
-        remove(0);
+        String item = myList.get(0);
+        myList.remove(0);
         return item;
     }//end dequeue()
 
     //Return value at front of list
     public String front() {
-        return get(0);
+        return myList.get(0);
     }//end front()
 
     public int size() {
-        return length();
-    }
+        return myList.length();
+    }//end size()
+
+    public boolean isEmpty() {
+        return myList.isEmpty();
+    }//end end isEmpty()
+
+    public String toString() {
+        return myList.toString();
+    }//end toString override
 
 }//end class Queue

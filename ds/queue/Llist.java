@@ -24,6 +24,28 @@ public class Llist{
 
     }//end addFront()
 
+    public void addBack(String data){
+        Node currentNode = front;
+        Node newNode = new Node(data);
+
+        // find the last node
+        while(currentNode != null && currentNode.getNext() != null) {
+            currentNode = currentNode.getNext();
+        }
+
+        //System.out.println("debug addBack - currentNode: " + currentNode);
+
+        // point last node to new node
+        if(currentNode == null) { //empty list
+            front = newNode;
+            //System.out.println("debug front - front: " + front);
+        } else {
+            currentNode.setNext(newNode);
+            //System.out.println("debug next - next: " + currentNode.getNext());
+        }
+
+    }//end addBack()
+
     public String toString(){
         Node currentNode;
         currentNode = front;
