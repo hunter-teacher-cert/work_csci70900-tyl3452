@@ -1,9 +1,6 @@
 /**
  * 
- * Team 1
- * Victoria B.
- * Brian M.
- * Eric`
+ * Eric Liu
  */
 
 import java.io.*;
@@ -14,11 +11,10 @@ public class Llist{
     private Node front; // the front of the list
 
     public  Llist(){
-	    front = null;
+        front = null;
     }//default constructor
 
-    // Add a new node containing data
-    // at the front of the list
+
     public void addFront(String data){
         // make the new node
         Node newNode = new Node(data);
@@ -88,78 +84,100 @@ public class Llist{
     // with 0) to value.
     // only sets if the index is within range
     public void set(int index, String value){
-      int i = 0;
-      Node currentNode = front;
-      while(currentNode != null){
-        if(i == index){
-          currentNode.setData(value);
-          break;
+        int i = 0;
+        Node currentNode = front;
+        while(currentNode != null){
+            if(i == index){
+                currentNode.setData(value);
+                break;
+            }
+                i++;
+                currentNode = currentNode.getNext();
         }
-        i++;
-        currentNode = currentNode.getNext();
-      }
     }
 
-    // insert an item before index.
-    // only inserts if the index is within bounds
-    // Hint: look at toString for hints on
-    // traversal and draw out a diagram.
-    // You will need a variable that refers to
-    // the node BEFORE you want to do the insertion.
-
-    // 0         1     2          3
-    // apple --> b --> carrot --> null
-    // ll.insert(2,"banana");
-    // apple --> b --> banana --> carrot --> null
-
+ 
     public void insert(int index, String value){
-      int i = 0;
-      Node currentNode = front;
-      while(currentNode != null){
-        if(i == index-1){
-          Node newNode = new Node(value,currentNode.getNext());
-          currentNode.setNext(newNode);
-          break;
+
+        Node prev=null;
+        Node current=front;
+        int count = 0;
+    
+        // This piggybacks the pointers - prev follows
+        // current 
+        while (current != null && count != index){
+            prev = current;
+            current = current.getNext();
+            count = count + 1;
         }
-        i++;
-        currentNode = currentNode.getNext();
-      }
+    
+        // at this point, current points to the insertion location (or
+        // null) and prev to the node ahead of it (or null in case
+        // insertion isat the beginning.
+    
+        
+        // we can only insert if index is in range
+        if (current==null){
+            return;
+        }
+    
+        // create the new node and set it's next to the current node
+        // (where we're inserting.
+        Node newNode=new Node(value);
+        newNode.setNext(current);
+        
+        // this handles the special case.
+        // if prev isn't null we're at some interior node so we
+        // can just insert it.
+        if(prev!=null){
+            prev.setNext(newNode);
+        } else{
+            // if prev was null we're inserting at the front
+            // which is a special case and we have to make front
+            // point to (refer to) the new node.
+            front = newNode;
+        }
     }
 
     // returns the index of the first item with
     // data value key. Returns -1 if not found
     public int search(String key){
-      int i = 0;
-      Node currentNode = front;
-      while(currentNode != null){
-        if(currentNode.getData() == key){
-          return i;
+        int i = 0;
+        Node currentNode = front;
+        while(currentNode != null){
+            if(currentNode.getData() == key){
+                return i;
+            }
+            i++;
+            currentNode = currentNode.getNext();
         }
-        i++;
-        currentNode = currentNode.getNext();
-      }
-      return -1;
+        return -1;
     }
 
-    // removes the node at index.
-    // does nothing if index out of bounds
-
-    // 0         1     2          3
-    // apple --> b --> banana --> carrot --> null
-    // ll.remove(2);
-    // 0         1     2
-    // apple --> b --> carrot --> null
+   
     public void remove(int index){
-      int i = 0;
-      Node currentNode = front;
-      while(currentNode != null){
-        if(i == index-1){
-          currentNode.setNext(currentNode.getNext().getNext());
-          break;
-        }
-        i++;
-        currentNode = currentNode.getNext();
-      }
-    }
+        //find the current node
+        Node currentNode = front;
+        Node prev = null;
+        int i = 0;
+        while (currentNode != null && i != index) {
+            i++;
+            prev = currentNode;
+            currentNode = currentNode.getNext();
+        }//end while
 
-}//end class Llists
+        //System.out.println("Debug in remove - current node: " + currentNode);
+
+        //if index out of range, nothing to remove
+        if (currentNode != null) {
+            if(prev == null) {      // one item list
+                front = null;
+            } else {
+                prev.setNext(currentNode.getNext());
+            }
+            
+        }
+
+     }//end remove()
+
+}//end class Queue
