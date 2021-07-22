@@ -42,10 +42,10 @@ public class Mode{
     }//end findSmallestValue()
 	
     public int findLargestValue(){
-        int largest = results.get(0);
-        for(int i=1; i < results.size(); i++){
-            if(results.get(i) > largest){
-                largest = results.get(i);
+        int largest = inputData.get(0);
+        for(int i=1; i < inputData.size(); i++){
+            if(inputData.get(i) > largest){
+                largest = inputData.get(i);
             }
         }
         return largest;
