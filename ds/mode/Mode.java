@@ -30,14 +30,20 @@ public class Mode{
      Find and return the smallest value in  InputData.
     */
 
-    public int findSmalletValue(){
-	    return 0;
+    public int findSmallestValue(){
+	    int smallest = inputData.get(0);
+        for(int i = 1 ; i<inputData.size(); i++){
+            if (inputData.get(i) < smallest){
+            smallest = inputData.get(i);
+            }
+        }
+        return smallest;
 
     }//end findSmallestValue()
 	
     public int findLargestValue(){
         int largest = results.get(0);
-        for(int i=0; i < results.size(); i++){
+        for(int i=1; i < results.size(); i++){
             if(results.get(i) > largest){
                 largest = results.get(i);
             }
@@ -58,8 +64,6 @@ public class Mode{
                 count++;
             }
         }
-  
-  
         return count;
     }//end frequency()
 
