@@ -35,14 +35,33 @@ public class Mode{
 
     }//end findSmallestValue()
 	
+    public int findLargestValue(){
+        int largest = results.get(0);
+        for(int i=0; i < results.size(); i++){
+            if(results.get(i) > largest){
+                largest = results.get(i);
+            }
+        }
+        return largest;
+      } //end of findLargestValue()
+
+
     /**
      * Warmup 2
 
      Returns the frequency of value in inputData, that is, how often value appears
     */
     public int frequency(int value){
-	return 0;
-    }
+        int count = 0;
+        for (int i=0; i <inputData.size(); i++){
+            if(inputData.get(i) == value){
+                count++;
+            }
+        }
+  
+  
+        return count;
+    }//end frequency()
 
     /**
      * 
@@ -58,8 +77,21 @@ public class Mode{
      function will help you find a strategy for approaching finding the mode.
     */
     public int calcMode(){
-	    return 0;
-    }
+	    ArrayList<Integer> results = new ArrayList<Integer>();
+        //iterate thru arraylist
+        for(int i=0; i< inputData.size(); i++){
+            //for each item in list, run frequency on that item
+            //save frequency in results arraylist
+            results.set(i) = frequency(inputData.get(i));
+        }
+
+        //find largest frequency in results
+        //return the mode
+        //have to resolve index vs value in results ArrayList
+        mode = findLargestValue();
+
+	    return mode;
+    }//end calcMode()
 
     public String toString(){
 	    return ""+inputData;
