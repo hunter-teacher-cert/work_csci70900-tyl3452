@@ -187,7 +187,7 @@ public class Llist{
             currentNode = currentNode.getNext();
         }//end while
 
-        System.out.println("Debug in remove - current node: " + currentNode);
+        //System.out.println("Debug in remove - current node: " + currentNode);
 
         //if index out of range, nothing to remove
         if(currentNode != null) {
