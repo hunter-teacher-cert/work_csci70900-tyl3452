@@ -63,9 +63,29 @@ import java.io.*;
 import java.util.*;
 
 public class Qsort {
-
+    private ArrayList<Integer> data = new ArrayList<Integer>();
+    
     public Qsort() {
-
+        Random r = new Random();
+        for(int i=0; i<10; i++){
+            data.add(r.nextInt(10));
+        }
     }//end default constructor
+
+    public Qsort(int size) {
+        Random r = new Random();
+        for(int i=0; i<size; i++){
+            data.add(r.nextInt(10));
+        }
+    }//end constructor
+
+    // size and bounds
+    public Qsort(int size, int bound) {
+        Random r = new Random();
+        for(int i=0; i<size; i++){
+            data.add(r.nextInt(bound));
+        }
+    }//end constructor
+
 
 }//end class Qsort

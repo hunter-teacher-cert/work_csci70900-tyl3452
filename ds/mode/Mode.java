@@ -85,22 +85,22 @@ public class Mode{
      function will help you find a strategy for approaching finding the mode.
     */
     public int calcMode(){
-	    ArrayList<Integer> frequencyResults = new ArrayList<Integer>();
-      //iterate thru arraylist
-      for(int i=0; i< inputData.size(); i++){
-          //for each item in list, run frequency on that item
-          //save frequency in results arraylist
-          frequencyResults.add(frequency(inputData.get(i)));
-      }
+        ArrayList<Integer> frequencyResults = new ArrayList<Integer>();
+        //iterate thru arraylist
+        for(int i=0; i< inputData.size(); i++){
+            //for each item in list, run frequency on that item
+            //save frequency in results arraylist
+            frequencyResults.add(frequency(inputData.get(i)));
+        }
 
-      System.out.println("Debug frequencyResults: " + frequencyResults);
-      //find largest frequency in results
-      //return the mode
-      //have to resolve index vs value in results ArrayList
-      int largest = findLargestValue(frequencyResults);
-      int mode = inputData.get(frequencyResults.indexOf(largest));
+        System.out.println("Debug frequencyResults: " + frequencyResults);
+        //find largest frequency in results
+        //return the mode
+        //have to resolve index vs value in results ArrayList
+        int largest = findLargestValue(frequencyResults);
+        int mode = inputData.get(frequencyResults.indexOf(largest));
 
-	  return mode;
+        return mode;
     }//end calcMode()
 
     public String toString(){
