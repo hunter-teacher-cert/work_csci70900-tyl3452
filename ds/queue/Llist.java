@@ -181,22 +181,21 @@ public class Llist{
         Node currentNode = front;
         Node prev = null;
         int i = 0;
-        while (currentNode != null && i != index) {
+        while(currentNode != null && i != index) {
             i++;
             prev = currentNode;
             currentNode = currentNode.getNext();
         }//end while
 
-        //System.out.println("Debug in remove - current node: " + currentNode);
+        System.out.println("Debug in remove - current node: " + currentNode);
 
         //if index out of range, nothing to remove
-        if (currentNode != null) {
-            if(prev == null) {      // one item list
-                front = null;
-            } else {
+        if(currentNode != null) {
+            if(prev != null){  // when not first element
                 prev.setNext(currentNode.getNext());
-            }
-            
+            } else {                            // when first element, set front to next node
+                front = currentNode.getNext();
+            }            
         }
 
      }//end remove()

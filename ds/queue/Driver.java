@@ -11,14 +11,24 @@ public class Driver{
         System.out.println("Testing Queue");
         Queue q = new Queue();
 
+        //Test load q
         q.enqueue("a");
         System.out.println(q);
         q.enqueue("b");
         System.out.println(q);
         q.enqueue("c");
-        System.out.println(q);
-        System.out.println(q.isEmpty());
+        System.out.println(q);  //Expected a->b->c->null
+        
 
+        //Test dequeue
+        q.dequeue();
+        System.out.println(q);  // b->c->null
+        //Test dequeue
+        q.dequeue();
+        System.out.println(q);  // c-> null
+        //Test dequeue
+        q.dequeue();
+        System.out.println(q);  // null
 
 
 
