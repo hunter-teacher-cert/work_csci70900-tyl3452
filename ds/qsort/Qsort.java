@@ -47,6 +47,7 @@ public class Qsort {
 
         //split up into LHS and RHS
         ArrayList<Integer> left = new ArrayList<Integer>();
+        ArrayList<Integer> left = new ArrayList<Integer>();
         for(int i=1; i<inputList.size(); i++) {
             if(inputList.get(i) < pivot) {
                 left.add(inputList.get(i));
@@ -54,9 +55,9 @@ public class Qsort {
                 right.add(inputList.get(i));
             }
         }
-        
 
-        return;
+        return quickSort(left).addALL(quicksort(right));
+        
     }//end quickSort()
 
 }//end class Qsort
