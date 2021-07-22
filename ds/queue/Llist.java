@@ -14,7 +14,6 @@ public class Llist{
         front = null;
     }//default constructor
 
-
     public void addFront(String data){
         // make the new node
         Node newNode = new Node(data);
@@ -78,7 +77,7 @@ public class Llist{
         currentNode = currentNode.getNext();
       }
       return null;
-    }
+    }//end get()
 
     // sets the item at location index (starting
     // with 0) to value.
