@@ -32,11 +32,21 @@ public class Qsort {
         }
     }//end constructor
 
+    // size and bounds
+    public static ArrayList<Integer> fillArray(int size, int bound) {
+        ArrayList<Integer> newArray = new ArrayList<Integer>();
+        Random r = new Random();
+        for(int i=0; i<size; i++){
+            newArray.add(r.nextInt(bound));
+        }
+        return newArray;
+    }//end fillArray()
+
     public String toString(){
 	    return "" + data;
     }//end toString()
 
-    public ArrayList<Integer> quickSort(ArrayList<Integer> inputList) {
+    public static ArrayList<Integer> quickSort(ArrayList<Integer> inputList) {
 
         //if data is 0 or 1, just return
         if(inputList.size() < 2) {
@@ -57,7 +67,13 @@ public class Qsort {
         }
 
         return quickSort(left).addALL(quicksort(right));
-        
+
     }//end quickSort()
+
+    public static void main(String[] args) {
+        
+
+    }//end main()
+
 
 }//end class Qsort
