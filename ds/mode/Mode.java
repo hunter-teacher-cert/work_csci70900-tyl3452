@@ -1,7 +1,11 @@
 import java.io.*;
 import java.util.*;
 
-
+/**
+ * Team 9
+ * Jovanni C.
+ * Eric Liu
+ */
 
 public class Mode{
     private ArrayList<Integer> inputData;
@@ -41,15 +45,15 @@ public class Mode{
 
     }//end findSmallestValue()
 	
-    public int findLargestValue(){
-        int largest = inputData.get(0);
-        for(int i=1; i < inputData.size(); i++){
-            if(inputData.get(i) > largest){
-                largest = inputData.get(i);
-            }
+    public int findLargestValue(ArrayList<Integer> a){
+        int largest = a.get(0);
+        for(int i=0; i < a.size(); i++){
+          if(a.get(i) > largest){
+            largest = a.get(i);
+          }
         }
         return largest;
-      } //end of findLargestValue()
+      } //end of findLargestValue method
 
 
     /**
@@ -81,20 +85,22 @@ public class Mode{
      function will help you find a strategy for approaching finding the mode.
     */
     public int calcMode(){
-	    ArrayList<Integer> results = new ArrayList<Integer>();
-        //iterate thru arraylist
-        for(int i=0; i< inputData.size(); i++){
-            //for each item in list, run frequency on that item
-            //save frequency in results arraylist
-            results.set(i) = frequency(inputData.get(i));
-        }
+	    ArrayList<Integer> frequencyResults = new ArrayList<Integer>();
+      //iterate thru arraylist
+      for(int i=0; i< inputData.size(); i++){
+          //for each item in list, run frequency on that item
+          //save frequency in results arraylist
+          frequencyResults.add(frequency(inputData.get(i)));
+      }
 
-        //find largest frequency in results
-        //return the mode
-        //have to resolve index vs value in results ArrayList
-        mode = findLargestValue();
+      System.out.println("Debug frequencyResults: " + frequencyResults);
+      //find largest frequency in results
+      //return the mode
+      //have to resolve index vs value in results ArrayList
+      int largest = findLargestValue(frequencyResults);
+      int mode = inputData.get(frequencyResults.indexOf(largest));
 
-	    return mode;
+	  return mode;
     }//end calcMode()
 
     public String toString(){
