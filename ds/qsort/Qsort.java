@@ -48,16 +48,18 @@ public class Qsort {
 
     public static ArrayList<Integer> quickSort(ArrayList<Integer> inputList) {
 
+        ArrayList<Integer> newArray = new ArrayList<Integer>();
+
         //if data is 0 or 1, just return
         if(inputList.size() < 2) {
-            return;
+            return inputList;
         }
         //take first element as pivot
         int pivot = inputList.get(0);
 
         //split up into LHS and RHS
         ArrayList<Integer> left = new ArrayList<Integer>();
-        ArrayList<Integer> left = new ArrayList<Integer>();
+        ArrayList<Integer> right = new ArrayList<Integer>();
         for(int i=1; i<inputList.size(); i++) {
             if(inputList.get(i) < pivot) {
                 left.add(inputList.get(i));
@@ -66,14 +68,10 @@ public class Qsort {
             }
         }
 
-        return quickSort(left).addALL(quicksort(right));
+        newArray.addAll(quickSort(left));
+        newArray.addAll(quickSort(right));
+        return newArray;
 
     }//end quickSort()
-
-    public static void main(String[] args) {
-        
-
-    }//end main()
-
 
 }//end class Qsort
