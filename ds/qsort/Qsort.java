@@ -54,22 +54,31 @@ public class Qsort {
         if(inputList.size() < 2) {
             return inputList;
         }
-        //take first element as pivot
+        //take first element as pivot for now
         int pivot = inputList.get(0);
+        // System.out.println("Debug chose pivot: " + pivot);
 
         //split up into LHS and RHS
         ArrayList<Integer> left = new ArrayList<Integer>();
         ArrayList<Integer> right = new ArrayList<Integer>();
         for(int i=1; i<inputList.size(); i++) {
-            if(inputList.get(i) < pivot) {
+            if(inputList.get(i) <= pivot) {
                 left.add(inputList.get(i));
             } else {
                 right.add(inputList.get(i));
             }
         }
+        // System.out.println("Debug  left: " + left);
+        // System.out.println("Debug right: " + right);
+
+        // Scanner in = new Scanner(System.in);
+        // String userInput = in.nextLine();
 
         newArray.addAll(quickSort(left));
+        newArray.add(pivot);
         newArray.addAll(quickSort(right));
+        //System.out.println("Debug newArray: " + newArray);
+
         return newArray;
 
     }//end quickSort()
