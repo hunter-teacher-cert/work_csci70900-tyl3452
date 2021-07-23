@@ -6,7 +6,7 @@ import java.io.*;
 import java.util.*;
 
 
-public TreeNode {
+public class TreeNode {
     private int data;
     private TreeNode left, right;
 
@@ -34,15 +34,15 @@ public TreeNode {
         this.right = right;
     }//end setRight
 
-    public void getData() {
+    public int getData() {
         return data;
-    }//end setRight
+    }//end getData
 
-    public void getLeft() {
+    public TreeNode getLeft() {
         return left;
     }//end getRight
 
-    public void getRight() {
+    public TreeNode getRight() {
         return right;
     }//end getRight
 

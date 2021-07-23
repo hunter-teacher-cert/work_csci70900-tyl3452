@@ -5,14 +5,34 @@
 import java.io.*;
 import java.util.*;
 
+import javax.crypto.NullCipher;
 
-public BSTree {
+
+public class BSTree {
     private TreeNode root;
 
     public BSTree() {
         root = null;
     }//default constructor
     
+    public int search(int key) {
+        TreeNode current = root;
+
+        while(){
+            int currentValue = current.getData();
+            if(currentValue == key) {
+                return key;
+            } else if(currentValue < key) {
+                current = current.getRight();
+            } else {
+                current = current.getLeft();
+            }
+        }
+        throws new NullPointerException();
+
+        return -1;  // if not found
+    }//end search()
+
     public void seed() {
         TreeNode t;
         t = new TreeNode(10);
