@@ -52,7 +52,7 @@ public class BSTree {
         }
 
         TreeNode front = root;
-        TreeNode trailer;
+        TreeNode trailer = root;
 
         while(front != null) {
             int frontValue = front.getData();
@@ -68,7 +68,7 @@ public class BSTree {
         }//end while
 
         //do the insert
-        if (key > trailer.getValue()) {
+        if (key > trailer.getData()) {
             //insert on right
             trailer.setRight(newNode);
         } else {
