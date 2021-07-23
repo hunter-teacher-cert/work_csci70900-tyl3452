@@ -83,4 +83,43 @@ public class Qsort {
 
     }//end quickSort()
 
+    // quicksort try with calc mode each time which iterating thru the array 
+    public static ArrayList<Integer> quickSort2(ArrayList<Integer> inputList, int mode) {
+
+        ArrayList<Integer> newArray = new ArrayList<Integer>();
+
+        //if data is 0 or 1, just return
+        if(inputList.size() < 2) {
+            return inputList;
+        }
+        //take first element as pivot for now
+        int pivot_index = 0;
+        int pivot = inputList.get(0);
+        // System.out.println("Debug chose pivot: " + pivot);
+
+        //split up into LHS and RHS
+        ArrayList<Integer> left = new ArrayList<Integer>();
+        ArrayList<Integer> right = new ArrayList<Integer>();
+        for(int i=pivot_index; i<inputList.size(); i++) {
+            if(inputList.get(i) <= mode) {
+                left.add(inputList.get(i));
+            } else {
+                right.add(inputList.get(i));
+            }
+        }
+        // System.out.println("Debug  left: " + left);
+        // System.out.println("Debug right: " + right);
+
+        // Scanner in = new Scanner(System.in);
+        // String userInput = in.nextLine();
+
+        newArray.addAll(quickSort(left));
+        newArray.add(pivot);
+        newArray.addAll(quickSort(right));
+        //System.out.println("Debug newArray: " + newArray);
+
+        return newArray;
+
+    }//end quickSort2()
+
 }//end class Qsort
