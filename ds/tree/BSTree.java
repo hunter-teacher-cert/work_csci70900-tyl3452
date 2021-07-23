@@ -28,11 +28,12 @@ public class BSTree {
                 current = current.getLeft();
             }
         }
-        throws new NullPointerException();
+        throw new NullPointerException();
 
-        return -1;  // if not found
+        //return -1;  // if not found
     }//end search()
 
+    
     public void seed() {
         TreeNode t;
         t = new TreeNode(10);
