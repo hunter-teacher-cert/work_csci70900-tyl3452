@@ -12,6 +12,17 @@ public class BSTree {
         root = null;
     }//default constructor
     
+    public void seed() {
+        TreeNode t;
+        t = new TreeNode(10);
+        root = t;
+        t = new TreeNode(5);
+        root.setLeft(t);
+        t = new TreeNode(20);
+        root.setRight(t);
+
+    }//end seed()
+
     public int search(int key) {
         TreeNode current = root;
 
@@ -31,15 +42,40 @@ public class BSTree {
     }//end search()
 
 
-    public void seed() {
-        TreeNode t;
-        t = new TreeNode(10);
-        root = t;
-        t = new TreeNode(5);
-        root.setLeft(t);
-        t = new TreeNode(20);
-        root.setRight(t);
+    public void insert(int key) {
+        TreeNode newNode = new TreeNode(key);
+        
+        //if empty tree
+        if(root == null) {
+            root = newNode;
+            return;
+        }
 
-    }//end seed()
+        TreeNode front = root;
+        TreeNode trailer;
+
+        while(front != null) {
+            int frontValue = front.getData();
+            if (frontValue == key) {
+                //code here
+                return;
+            } else if (key < frontValue) {
+                trailer = front;
+                front = front.getLeft();
+            } else {
+                trailer = front;
+                front = front.getRight();
+            }
+        }//end while
+
+        if (key > trailer.getValue()) {
+            //insert on right
+            trailer.setRight(newNode);
+        } else {
+            trailer.setLeft(newNode);
+        }
+
+    }//end insert()
+
 
 }//end class TreeNode
