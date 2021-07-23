@@ -18,7 +18,7 @@ public class BSTree {
     public int search(int key) {
         TreeNode current = root;
 
-        while(){
+        while(current != null){
             int currentValue = current.getData();
             if(currentValue == key) {
                 return key;
