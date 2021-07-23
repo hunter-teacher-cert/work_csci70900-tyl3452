@@ -20,12 +20,12 @@ public class BSTree {
 
         while(current != null){
             int currentValue = current.getData();
-            if(currentValue == key) {
+            if(key == currentValue) {
                 return key;
-            } else if(currentValue < key) {
-                current = current.getRight();
-            } else {
+            } else if(key < currentValue) {
                 current = current.getLeft();
+            } else {
+                current = current.getRight();
             }
         }
         throw new NullPointerException();
@@ -33,7 +33,7 @@ public class BSTree {
         //return -1;  // if not found
     }//end search()
 
-    
+
     public void seed() {
         TreeNode t;
         t = new TreeNode(10);

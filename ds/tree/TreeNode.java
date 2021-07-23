@@ -24,11 +24,11 @@ public class TreeNode {
 
     public void setData(int data) {
         this.data = data;
-    }//end setRight
+    }//end setData
 
     public void setLeft(TreeNode left) {
         this.left = left;
-    }//end setRight
+    }//end setLeft
 
     public void setRight(TreeNode right) {
         this.right = right;
@@ -40,7 +40,7 @@ public class TreeNode {
 
     public TreeNode getLeft() {
         return left;
-    }//end getRight
+    }//end getLeft
 
     public TreeNode getRight() {
         return right;
