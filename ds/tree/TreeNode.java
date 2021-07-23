@@ -17,7 +17,7 @@ public class TreeNode {
     }//default constructor
     
     public TreeNode(int data) {
-        this.data = 0;
+        this.data = data;
         left = null;
         right = null;
     }//default constructor

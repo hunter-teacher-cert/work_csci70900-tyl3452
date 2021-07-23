@@ -13,6 +13,9 @@ public class Driver{
         //seed initial tree
         t.seed();
 
+        int value = t.search(5);
+        System.out.println("Debug search for 5: " + value);
+        
         // Test search for 20
         try {
             System.out.print("\nDebug search for 20: " + t.search(20));
