@@ -186,8 +186,10 @@ public class BSTree {
             if (max.getLeft() != null) {
                 delete(max.getData());
             }
-            //max should have no right child
+            // max should have no right child
             // reposition max by setting the right to front's right child
+            // set left to front's left
+            // c
             max.setRight(front.getRight());
             max.setLeft(front.getLeft());
             front = max;
