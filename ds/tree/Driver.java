@@ -39,6 +39,23 @@ public class Driver{
         t.traverse(1);
         t.traverse(2);
 
+        //Add a few inserts to test delete
+        t.insert(2);
+        t.insert(8);
+        t.insert(16);
+        t.insert(13);
+        t.insert(14);
+        t.insert(37);
+        t.insert(37);
+        t.insert(8);
+        t.insert(7);
+        t.insert(18);
+
+        t.traverse(2);
+
+        //Test delete
+        t.delete(17);
+        t.traverse(2);
 
     }//end main()
     

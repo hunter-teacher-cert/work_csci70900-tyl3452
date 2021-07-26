@@ -41,6 +41,26 @@ public class BSTree {
         //return -1;  // if not found
     }//end search()
 
+    /**
+     * 
+     * @param current TreeNode starting node to start search
+     * @return TreeNode rightmost node
+     */
+    public TreeNode findMax(TreeNode current) {
+        TreeNode max = current;
+
+        while(max != null) {
+            //go right
+            if (max.getRight() == null) {
+                return max;
+            } else {
+                max = max.getRight();
+            }
+        }//end while
+        return null;
+
+    }//end findMax()
+
 
     public void insert(int key) {
         TreeNode newNode = new TreeNode(key);
@@ -139,11 +159,11 @@ public class BSTree {
         if (front.getLeft() == null && front.getRight() == null) {
             //repoint front parent to null
             if (trailer.getLeft() == front) {
-                trailer.setLeft = null;
+                trailer.setLeft(null);
             } else {
-                trailer.setRight = null;
+                trailer.setRight(null);
             }
-        } else if (front.getLeft() != null && front.getRight() == null{
+        } else if (front.getLeft() != null && front.getRight() == null) {
             //repoint front's parent to front's child
             trailer.setLeft(front.getLeft());
 
@@ -158,6 +178,17 @@ public class BSTree {
             //front has two children
             //find the node with largest value on fronts left
             //and replace front with it
+            TreeNode max = findMax(front.getLeft());
+
+            //if max has any left child, reposition
+            if (max.getLeft() != null) {
+                delete(max.getData());
+            }
+            //max should have no right child
+            // reposition max by setting the right to front's right child
+            max.setRight(front.getRight());
+            max.setLeft(front.getLeft());
+            front = max;
         }
 
     }// end delete()
