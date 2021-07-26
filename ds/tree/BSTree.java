@@ -78,23 +78,34 @@ public class BSTree {
     }//end insert()
 
 
-    private void traverse(TreeNode current) {
+    private void traverse(TreeNode current, int mode) {
         if (current == null)
             return;
 
-        System.out.print(current.getData() + " ");
+        //preorder traversal 
+        if (mode == 0) {
+            System.out.print(current.getData() + " ");
+            traverse(current.getLeft(), mode);
+            traverse(current.getRight(), mode);
+        } else if (mode == 1) {     // postorder traversal
+            traverse(current.getLeft(), mode);
+            traverse(current.getRight(), mode);
+            System.out.print(current.getData() + " ");
+        } else if (mode == 2) {     // inorder traversal
+            traverse(current.getLeft(), mode);
+            System.out.print(current.getData() + " ");
+            traverse(current.getRight(), mode);
+        } else {
+            System.out.println("Shouldn't get here.");
+        }
 
-        traverse(current.getLeft());
-        traverse(current.getRight());
 
     }//end private traverse()
 
 
-    public void traverse() {
-        traverse(root);
-
-
-
+    public void traverse(int mode) {
+        traverse(root, mode);
+        System.out.println();
     }//end traverse()
 
 

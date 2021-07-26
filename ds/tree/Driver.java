@@ -35,7 +35,10 @@ public class Driver{
 
 
         //Test traverse
-        t.traverse();
+        t.traverse(0);
+        t.traverse(1);
+        t.traverse(2);
+
 
     }//end main()
     
