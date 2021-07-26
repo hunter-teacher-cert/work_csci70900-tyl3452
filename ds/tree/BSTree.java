@@ -77,7 +77,10 @@ public class BSTree {
 
     }//end insert()
 
-
+    /**
+     * @param current   TreeNode current node
+     * @param mode      int 0-preorder,1-postorder,2-inorder
+     */
     private void traverse(TreeNode current, int mode) {
         if (current == null)
             return;
@@ -102,11 +105,22 @@ public class BSTree {
 
     }//end private traverse()
 
-
     public void traverse(int mode) {
         traverse(root, mode);
         System.out.println();
     }//end traverse()
+
+    
+    public void delete(int key) {
+        //find node you want to delete
+        //and the node above it
+
+    
+
+
+    }// end delete()
+
+
 
 
 }//end class TreeNode
