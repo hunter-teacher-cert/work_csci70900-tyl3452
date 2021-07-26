@@ -78,4 +78,24 @@ public class BSTree {
     }//end insert()
 
 
+    private void traverse(Node *current) {
+        if (current == null)
+            return;
+
+        System.out.print(current.getData() + " ");
+
+        traverse(current.getLeft());
+        traverse.getRight();
+
+    }//end private traverse()
+
+
+    public void traverse() {
+        Node current = root;
+
+
+
+    }//end traverse()
+
+
 }//end class TreeNode
