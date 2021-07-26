@@ -140,9 +140,11 @@ public class BSTree {
             return;
         }
 
+        //start it off
         TreeNode front = root;
         TreeNode trailer = root;
 
+        //find the node you want to delete
         while (front != null && front.getData() != key) {
             if (key < front.getData()) {
                 trailer = front;
