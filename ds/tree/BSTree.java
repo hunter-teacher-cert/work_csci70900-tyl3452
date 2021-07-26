@@ -134,14 +134,27 @@ public class BSTree {
         }//end while
 
 
-        // if we get here, front pots to node we want to delete
+        // if we get here, front points to node we want to delete
         // and trailer pts to one above it
         if (front.getLeft() == null && front.getRight() == null) {
-
-            //repoint fron't parent to null
-        } else if (/*check if fonr has one child */ ) {
+            //repoint front parent to null
+            if (trailer.getLeft() == front) {
+                trailer.setLeft = null;
+            } else {
+                trailer.setRight = null;
+            }
+        } else if (front.getLeft() != null && front.getRight() == null{
             //repoint front's parent to front's child
-        } else {
+            trailer.setLeft(front.getLeft());
+
+            front.setLeft(null);    //may not be necessary
+
+        } else if (front.getLeft() == null && front.getRight() != null) {
+            trailer.setRight(front.getRight());
+
+            front.setRight(null);   //may not be necessary
+        }
+        else {
             //front has two children
             //find the node with largest value on fronts left
             //and replace front with it
