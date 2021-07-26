@@ -33,6 +33,10 @@ public class Driver{
         System.out.println("Debug insert/search for  3: " + t.search(3));
         System.out.println("Debug insert/search for  9: " + t.search(9));
 
+
+        //Test traverse
+        t.traverse();
+
     }//end main()
     
 }//end class Driver
