@@ -115,8 +115,37 @@ public class BSTree {
         //find node you want to delete
         //and the node above it
 
-    
+        //if tree is empty, nothing to delete
+        if (root == null) {
+            return;
+        }
 
+        TreeNode front = root;
+        TreeNode trailer = root;
+
+        while (front != null && front.getData() != key) {
+            if (key < front.getData()) {
+                trailer = front;
+                front = front.getLeft();
+            } else {
+                trailer = front;
+                front = front.getRight();
+            }
+        }//end while
+
+
+        // if we get here, front pots to node we want to delete
+        // and trailer pts to one above it
+        if (front.getLeft() == null && front.getRight() == null) {
+
+            //repoint fron't parent to null
+        } else if (/*check if fonr has one child */ ) {
+            //repoint front's parent to front's child
+        } else {
+            //front has two children
+            //find the node with largest value on fronts left
+            //and replace front with it
+        }
 
     }// end delete()
 
