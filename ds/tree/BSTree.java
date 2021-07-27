@@ -44,7 +44,7 @@ public class BSTree {
     /**
      * 
      * @param current TreeNode starting node to start search
-     * @return TreeNode rightmost node
+     * @return TreeNode rightmost
      */
     public TreeNode findMax(TreeNode current) {
         TreeNode max = current;
@@ -89,11 +89,11 @@ public class BSTree {
         }//end while
 
         //do the insert
-        if (key > trailer.getData()) {
+        if (key < trailer.getData()) {
+            trailer.setLeft(newNode);
+        } else {
             //insert on right
             trailer.setRight(newNode);
-        } else {
-            trailer.setLeft(newNode);
         }
 
     }//end insert()
@@ -160,50 +160,59 @@ public class BSTree {
         // if we get here, front points to node we want to delete
         // and trailer pts to one above it
         if (front.getLeft() == null && front.getRight() == null) {
-
             if (trailer.getLeft() == front) {
                 trailer.setLeft(null);
             } else {
                 trailer.setRight(null);
             }
         } else if (front.getLeft() != null && front.getRight() == null) {
-
+            //find max of the left subtree and delete it
             TreeNode max = findMax(front.getLeft());
-            
-            if (trailer.getLeft() == front) {
-                trailer.setLeft(max);
-                
-            } else {
-                trailer.setRight(max);
+            TreeNode newNode = new TreeNode(max.getData());
+
+            //if max has left subtrees, call again and delete
+            if (max.getLeft() != null) {
+                delete(max.getData());
             }
-            
-            max.setLeft(front.getLeft());
-            max.setRight(null);
-            
-            front.setLeft(null);    //may not be necessary
+        
+            // point trailer to new max replacement
+            if (trailer.getLeft() == front) {
+                trailer.setLeft(newNode);
+            } else {
+                trailer.setRight(newNode);
+            }
 
-        } else if (front.getLeft() == null && front.getRight() != null) {
+            // finish setting up max as replacement node
+            newNode.setLeft(front.getLeft());
+            newNode.setRight(null);             // not necessary
+
+        } else if (front.getLeft() == null && front.getRight() != null) {         
             trailer.setRight(front.getRight());
-
-            front.setRight(null);   //may not be necessary
+            front.setRight(null);           //may not be necessary
         }
         else {
             //front has two children
             //find the node with largest value on fronts left
             //and replace front with it
             TreeNode max = findMax(front.getLeft());
-
+            TreeNode newNode = new TreeNode(max.getData());
+            
             //if max has any left child, reposition
             if (max.getLeft() != null) {
                 delete(max.getData());
             }
+
             // max should have no right child
-            // reposition max by setting the right to front's right child
-            // set left to front's left
-            // c
-            max.setRight(front.getRight());
-            max.setLeft(front.getLeft());
-            front = max;
+            // 
+            if (trailer.getLeft() == front) {
+                trailer.setLeft(newNode);
+                newNode.setLeft(front.getLeft());
+                newNode.setRight(front.getRight());
+            } else {
+                trailer.setRight(max);
+                newNode.setLeft(front.getLeft());
+                newNode.setRight(front.getRight());
+            }
         }
 
     }// end delete()

@@ -32,7 +32,7 @@ public class Driver{
         System.out.println("Debug insert/search for 25: " + t.search(25));
         System.out.println("Debug insert/search for  3: " + t.search(3));
         System.out.println("Debug insert/search for  9: " + t.search(9));
-
+        t.traverse(2);
 
         //Test traverse
         t.traverse(0);
