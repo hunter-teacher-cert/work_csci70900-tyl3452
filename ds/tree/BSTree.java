@@ -52,6 +52,7 @@ public class BSTree {
         while(max != null) {
             //go right
             if (max.getRight() == null) {
+                System.out.println("Found max: " + max.getData());
                 return max;
             } else {
                 max = max.getRight();
@@ -159,16 +160,26 @@ public class BSTree {
         // if we get here, front points to node we want to delete
         // and trailer pts to one above it
         if (front.getLeft() == null && front.getRight() == null) {
-            //repoint front parent to null
+
             if (trailer.getLeft() == front) {
                 trailer.setLeft(null);
             } else {
                 trailer.setRight(null);
             }
         } else if (front.getLeft() != null && front.getRight() == null) {
-            //repoint front's parent to front's child
-            trailer.setLeft(front.getLeft());
 
+            TreeNode max = findMax(front.getLeft());
+            
+            if (trailer.getLeft() == front) {
+                trailer.setLeft(max);
+                
+            } else {
+                trailer.setRight(max);
+            }
+            
+            max.setLeft(front.getLeft());
+            max.setRight(null);
+            
             front.setLeft(null);    //may not be necessary
 
         } else if (front.getLeft() == null && front.getRight() != null) {

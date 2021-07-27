@@ -46,16 +46,20 @@ public class Driver{
         t.insert(13);
         t.insert(14);
         t.insert(37);
-        t.insert(37);
-        t.insert(8);
         t.insert(7);
         t.insert(18);
 
+        //test delete
+        System.out.print("Before delete: ");
         t.traverse(2);
 
-        //Test delete
-        t.delete(17);
+        Scanner in = new Scanner(System.in);
+        System.out.print("Enter value to delete: ");
+        int deleteValue = in.nextInt();
+        t.delete(deleteValue);
+        System.out.print("After  delete: ");
         t.traverse(2);
+
 
     }//end main()
     
