@@ -1,4 +1,4 @@
-Jovani, Julian, Eric, Dwayne, Jiyoon
+Jovani, Julian, Eric L., Dwayne, Jiyoon
 
 ## Lesson objective: Introduction to using a library/package in conjunction with an HTML page
 
