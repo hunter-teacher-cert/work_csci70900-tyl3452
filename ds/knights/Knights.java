@@ -105,7 +105,7 @@ public class Knights{
 		// what do we put into the board
 		// Change CHANGETHIS
 		board[col][row]=count;
-		delay(5);
+		delay(1);
 		System.out.println(clearScreen+this);
 		//System.out.flush();
 
