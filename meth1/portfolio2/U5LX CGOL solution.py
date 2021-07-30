@@ -114,12 +114,12 @@ def get_next_gen_cell(row, column):
 
     return status
 
-# Complete this function generateNextBoard
+# Complete this function generate_next_board
 # After you code the algorithm to determine the status of the next gen for each individual cell
 # Code to update the board for all cells
 # :param board 2D list containing current board
 # :return new_board 2D list containing board for next generation
-def generateNextBoard(board):
+def generate_next_board(board):
 
     new_board = [['-' for i in range(BOARD_SIZE)] for j in range(BOARD_SIZE)]
 
@@ -192,4 +192,4 @@ while(user_input != 'stop'):
     print_board(board)
     user_input = input('Press Enter to go to next generation (Type stop otherwise): ')
     gen += 1
-    board = generateNextBoard(board)
+    board = generate_next_board(board)
